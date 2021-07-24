@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="author" xml:space="preserve">
+    <value>作者： LibXZR @ akr-developers.com</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>未启用</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="fastboot_0_size" xml:space="preserve">
+    <value>获取失败</value>
+  </data>
+  <data name="fastboot_basic_prop" xml:space="preserve">
+    <value>基本属性</value>
+  </data>
+  <data name="fastboot_choose_device" xml:space="preserve">
+    <value>选择操作的目标设备（双击）：</value>
+  </data>
+  <data name="fastboot_cow_exist_str0" xml:space="preserve">
+    <value>Virtual A/B 临时分区存在</value>
+  </data>
+  <data name="fastboot_cow_exist_str1" xml:space="preserve">
+    <value>当前设备中存在 Virtual A/B 更新中创建的临时分区，强行继续可能造成因super分区空间不足而导致的镜像刷入失败，从而无法启动。</value>
+  </data>
+  <data name="fastboot_cow_exist_str2" xml:space="preserve">
+    <value>（在Virtual A/B 更新未在进行的前提下，您可以手动删除动态分区中以cow结尾的临时分区以解决此警告）</value>
+  </data>
+  <data name="fastboot_cow_exist_str3" xml:space="preserve">
+    <value>要强行继续刷入吗？</value>
+  </data>
+  <data name="fastboot_create_dynamic_partition" xml:space="preserve">
+    <value>创建新的动态分区</value>
+  </data>
+  <data name="fastboot_current_device" xml:space="preserve">
+    <value>当前选择的设备：</value>
+  </data>
+  <data name="fastboot_current_slot" xml:space="preserve">
+    <value>当前分区</value>
+  </data>
+  <data name="fastboot_device" xml:space="preserve">
+    <value>设备</value>
+  </data>
+  <data name="fastboot_device_name" xml:space="preserve">
+    <value>设备名</value>
+  </data>
+  <data name="fastboot_device_not_exist" xml:space="preserve">
+    <value>目标设备不存在</value>
+  </data>
+  <data name="fastboot_enhance" xml:space="preserve">
+    <value>Fastboot 可视化</value>
+  </data>
+  <data name="fastboot_expand_dynamic_partition" xml:space="preserve">
+    <value>扩容动态分区</value>
+  </data>
+  <data name="fastboot_filter_by_partition_name" xml:space="preserve">
+    <value>根据分区名过滤：</value>
+  </data>
+  <data name="fastboot_flash_payload" xml:space="preserve">
+    <value>刷写Payload.bin</value>
+  </data>
+  <data name="fastboot_ignore_unknown" xml:space="preserve">
+    <value>忽略未知分区</value>
+  </data>
+  <data name="fastboot_is_userspace" xml:space="preserve">
+    <value>当前处于 Fastbootd</value>
+  </data>
+  <data name="fastboot_not_support_multiselect" xml:space="preserve">
+    <value>单分区操作不允许选择多个分区</value>
+  </data>
+  <data name="fastboot_only_logical" xml:space="preserve">
+    <value>此操作仅限于逻辑分区</value>
+  </data>
+  <data name="fastboot_partition_action" xml:space="preserve">
+    <value>分区操作</value>
+  </data>
+  <data name="fastboot_partition_action_create" xml:space="preserve">
+    <value>创建</value>
+  </data>
+  <data name="fastboot_partition_action_delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="fastboot_partition_action_erase" xml:space="preserve">
+    <value>擦除</value>
+  </data>
+  <data name="fastboot_partition_action_flash" xml:space="preserve">
+    <value>刷写</value>
+  </data>
+  <data name="fastboot_partition_action_resize" xml:space="preserve">
+    <value>扩容</value>
+  </data>
+  <data name="fastboot_partition_is_dynamic" xml:space="preserve">
+    <value>动态分区</value>
+  </data>
+  <data name="fastboot_partition_name" xml:space="preserve">
+    <value>分区名</value>
+  </data>
+  <data name="fastboot_partition_name_empty" xml:space="preserve">
+    <value>分区名未填写。</value>
+  </data>
+  <data name="fastboot_partition_size" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="fastboot_partition_size_b" xml:space="preserve">
+    <value>大小 (B)</value>
+  </data>
+  <data name="fastboot_partition_size_empty" xml:space="preserve">
+    <value>分区大小未填写。</value>
+  </data>
+  <data name="fastboot_partition_size_invalid" xml:space="preserve">
+    <value>无效的分区大小。</value>
+  </data>
+  <data name="fastboot_partition_size_unable_shrink" xml:space="preserve">
+    <value>无法缩小分区。你可以选择先删除再重建。</value>
+  </data>
+  <data name="fastboot_partition_table" xml:space="preserve">
+    <value>分区表</value>
+  </data>
+  <data name="fastboot_prop_name" xml:space="preserve">
+    <value>属性名</value>
+  </data>
+  <data name="fastboot_prop_value" xml:space="preserve">
+    <value>属性值</value>
+  </data>
+  <data name="fastboot_reboot_bootloader" xml:space="preserve">
+    <value>重启到Bootloader</value>
+  </data>
+  <data name="fastboot_reboot_fastbootd" xml:space="preserve">
+    <value>重启到Fastbootd</value>
+  </data>
+  <data name="fastboot_remove_device" xml:space="preserve">
+    <value>移除设备</value>
+  </data>
+  <data name="fastboot_seamless_update" xml:space="preserve">
+    <value>无缝更新 (A/B分区)</value>
+  </data>
+  <data name="fastboot_secure_boot" xml:space="preserve">
+    <value>安全启动</value>
+  </data>
+  <data name="fastboot_serial_num" xml:space="preserve">
+    <value>序列号</value>
+  </data>
+  <data name="fastboot_setactive_a" xml:space="preserve">
+    <value>切换到a分区</value>
+  </data>
+  <data name="fastboot_setactive_b" xml:space="preserve">
+    <value>切换到b分区</value>
+  </data>
+  <data name="fastboot_show_logs" xml:space="preserve">
+    <value>显示日志</value>
+  </data>
+  <data name="fastboot_target_partition_not_selected" xml:space="preserve">
+    <value>尚未选择目标分区</value>
+  </data>
+  <data name="fastboot_unknown_partition_str0" xml:space="preserve">
+    <value>以下分区可能未知：</value>
+  </data>
+  <data name="fastboot_unknown_partition_str1" xml:space="preserve">
+    <value>您可以勾选“忽略未知分区” 来消除此警告，存在未知分区并不代表分区刷入会失败抑或设备会无法启动。</value>
+  </data>
+  <data name="fastboot_unknown_partition_str2" xml:space="preserve">
+    <value>可能需要切换到fastbootd模式</value>
+  </data>
+  <data name="fastboot_update_status" xml:space="preserve">
+    <value>系统更新状态</value>
+  </data>
+  <data name="fastboot_update_status_merging" xml:space="preserve">
+    <value>正在合并</value>
+  </data>
+  <data name="fastboot_update_status_none" xml:space="preserve">
+    <value>未在进行</value>
+  </data>
+  <data name="fastboot_update_status_snapshotted" xml:space="preserve">
+    <value>已执行快照</value>
+  </data>
+  <data name="fastboot_vab_staging_str0" xml:space="preserve">
+    <value>系统更新正在进行中</value>
+  </data>
+  <data name="fastboot_vab_staging_str1" xml:space="preserve">
+    <value>设备正处于系统更新过程中，强行进行刷入可能导致设备无法启动。</value>
+  </data>
+  <data name="fastboot_vab_staging_str2" xml:space="preserve">
+    <value>（您可以重启设备进系统等待一会儿，直到更新过程完成）</value>
+  </data>
+  <data name="fastboot_vab_staging_str3" xml:space="preserve">
+    <value>要强行继续刷入吗？</value>
+  </data>
+  <data name="fastboot_vbmeta_disable_verify" xml:space="preserve">
+    <value>要禁用vbmeta中的校验吗？</value>
+  </data>
+  <data name="fastboot_vbmeta_disable_verify_title" xml:space="preserve">
+    <value>禁用校验</value>
+  </data>
+  <data name="logger" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="open_source" xml:space="preserve">
+    <value>开放源代码</value>
+  </data>
+  <data name="operation_completed" xml:space="preserve">
+    <value>操作已完成</value>
+  </data>
+  <data name="operation_not_supported" xml:space="preserve">
+    <value>操作不被支持。</value>
+  </data>
+  <data name="payload_basic_properties" xml:space="preserve">
+    <value>基本属性</value>
+  </data>
+  <data name="payload_blocksize" xml:space="preserve">
+    <value>块大小</value>
+  </data>
+  <data name="payload_browse" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="payload_current_file" xml:space="preserve">
+    <value>当前打开：</value>
+  </data>
+  <data name="payload_data_size" xml:space="preserve">
+    <value>数据大小</value>
+  </data>
+  <data name="payload_dumper" xml:space="preserve">
+    <value>Payload.bin 解包</value>
+  </data>
+  <data name="payload_dynamic_partition_metadata" xml:space="preserve">
+    <value>动态分区元数据</value>
+  </data>
+  <data name="payload_error_occur" xml:space="preserve">
+    <value>发生了一个错误。</value>
+  </data>
+  <data name="payload_extract_ignore_unknown" xml:space="preserve">
+    <value>忽略未知操作</value>
+  </data>
+  <data name="payload_extract_ignore_verify" xml:space="preserve">
+    <value>忽略一切校验</value>
+  </data>
+  <data name="payload_extract_image" xml:space="preserve">
+    <value>导出镜像</value>
+  </data>
+  <data name="payload_extract_incremental" xml:space="preserve">
+    <value>允许非完整包</value>
+  </data>
+  <data name="payload_extract_options" xml:space="preserve">
+    <value>导出选项</value>
+  </data>
+  <data name="payload_full_package" xml:space="preserve">
+    <value>完整包</value>
+  </data>
+  <data name="payload_incremental_warning" xml:space="preserve">
+    <value>这不是一个完整包，无法导出分区镜像。</value>
+  </data>
+  <data name="payload_manifest_size" xml:space="preserve">
+    <value>清单大小</value>
+  </data>
+  <data name="payload_metadata_signature" xml:space="preserve">
+    <value>元数据签名 (Base64)</value>
+  </data>
+  <data name="payload_metadata_signature_size" xml:space="preserve">
+    <value>元数据签名大小</value>
+  </data>
+  <data name="payload_no_dynamic_metadata" xml:space="preserve">
+    <value>无动态分区元数据</value>
+  </data>
+  <data name="payload_no_file_str" xml:space="preserve">
+    <value>尚未指定目标，请点击按钮浏览，或拖入一个文件</value>
+  </data>
+  <data name="payload_partitions" xml:space="preserve">
+    <value>分区信息</value>
+  </data>
+  <data name="payload_partitions_filter_by_name" xml:space="preserve">
+    <value>根据分区名过滤：</value>
+  </data>
+  <data name="payload_partitions_hash" xml:space="preserve">
+    <value>校验值 (Base64)</value>
+  </data>
+  <data name="payload_partitions_name" xml:space="preserve">
+    <value>分区名</value>
+  </data>
+  <data name="payload_partitions_size" xml:space="preserve">
+    <value>分区大小</value>
+  </data>
+  <data name="payload_partition_group_include" xml:space="preserve">
+    <value>包含的分区：</value>
+  </data>
+  <data name="payload_partition_group_name" xml:space="preserve">
+    <value>分区组名：</value>
+  </data>
+  <data name="payload_partition_group_size" xml:space="preserve">
+    <value>分区组大小：</value>
+  </data>
+  <data name="payload_property_name" xml:space="preserve">
+    <value>属性名</value>
+  </data>
+  <data name="payload_property_value" xml:space="preserve">
+    <value>属性值</value>
+  </data>
+  <data name="payload_remove_file" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="payload_signature" xml:space="preserve">
+    <value>签名 (Base64)</value>
+  </data>
+  <data name="payload_signature_size" xml:space="preserve">
+    <value>签名大小</value>
+  </data>
+  <data name="payload_snapshot_enabled" xml:space="preserve">
+    <value>启用分区快照：</value>
+  </data>
+  <data name="payload_target_partition_not_selected" xml:space="preserve">
+    <value>未选择要导出的分区。</value>
+  </data>
+  <data name="payload_timestamp" xml:space="preserve">
+    <value>时间</value>
+  </data>
+  <data name="payload_unable_drop_multifile" xml:space="preserve">
+    <value>不支持放入多个文件。</value>
+  </data>
+  <data name="payload_unsupported_format" xml:space="preserve">
+    <value>不兼容的文件格式。</value>
+  </data>
+  <data name="payload_version" xml:space="preserve">
+    <value>Payload版本</value>
+  </data>
+  <data name="release_at" xml:space="preserve">
+    <value>发布于 www.akr-developers.com</value>
+  </data>
+  <data name="select_save_path" xml:space="preserve">
+    <value>选择保存路径</value>
+  </data>
+  <data name="unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="visit_thread" xml:space="preserve">
+    <value>访问主帖</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+</root>

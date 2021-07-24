@@ -1,0 +1,13 @@
+﻿<Window x:Class="FastbootEnhance.Logger"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:props="clr-namespace:FastbootEnhance.Properties"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="{x:Static props:Resources.logger}" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <ScrollViewer x:Name="scroller" VerticalScrollBarVisibility="Auto">
+        <TextBox x:Name="log" Margin="10,10,10,10" TextWrapping="WrapWithOverflow" IsReadOnly="True" />
+    </ScrollViewer>
+</Window>
