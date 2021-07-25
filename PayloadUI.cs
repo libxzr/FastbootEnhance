@@ -193,7 +193,8 @@ namespace FastbootEnhance
             payloadInfoListAppend(Properties.Resources.payload_signature_size, Helper.byte2AUnit(payload.payload_signatures_message_size));
             payloadInfoListAppend(Properties.Resources.payload_signature, payload.payload_signatures_message.Signatures_[0].Data.ToBase64());
 
-            payloadInfoListAppend(Properties.Resources.payload_full_package, payload.manifest.MinorVersion == 0 ? "是" : "否 (" + payload.manifest.MinorVersion + ")");
+            payloadInfoListAppend(Properties.Resources.payload_full_package, payload.manifest.MinorVersion == 0 ?
+                Properties.Resources.yes : Properties.Resources.no + " (" + payload.manifest.MinorVersion + ")");
             if (payload.manifest.HasMaxTimestamp)
                 payloadInfoListAppend(Properties.Resources.payload_timestamp, Helper.timeStamp2DataTime(payload.manifest.MaxTimestamp).ToString());
             payloadInfoListAppend(Properties.Resources.payload_blocksize, Helper.byte2AUnit(payload.manifest.BlockSize));
