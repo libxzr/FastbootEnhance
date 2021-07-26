@@ -252,6 +252,12 @@
   <data name="fastboot_reboot_fastbootd" xml:space="preserve">
     <value>Reboot to Fastbootd</value>
   </data>
+  <data name="fastboot_reboot_recovery" xml:space="preserve">
+    <value>Reboot to Recovery</value>
+  </data>
+  <data name="fastboot_reboot_system" xml:space="preserve">
+    <value>Reboot to System</value>
+  </data>
   <data name="fastboot_remove_device" xml:space="preserve">
     <value>Disconnect</value>
   </data>

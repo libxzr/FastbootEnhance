@@ -249,6 +249,12 @@
   <data name="fastboot_reboot_fastbootd" xml:space="preserve">
     <value>重启到Fastbootd</value>
   </data>
+  <data name="fastboot_reboot_recovery" xml:space="preserve">
+    <value>重启到恢复模式</value>
+  </data>
+  <data name="fastboot_reboot_system" xml:space="preserve">
+    <value>重启到系统</value>
+  </data>
   <data name="fastboot_remove_device" xml:space="preserve">
     <value>移除设备</value>
   </data>

@@ -131,11 +131,15 @@
                             </Grid>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1.5*" ></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Label VerticalAlignment="Center" x:Name="fastboot_cur_device" Content="{x:Static props:Resources.fastboot_current_device}" Grid.Column="0"/>
-                                <Button x:Name="fastboot_remove" Margin="5 5 5 5" Content="{x:Static props:Resources.fastboot_remove_device}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                                <Button x:Name="fastboot_remove" Margin="5 5 5 5" Content="{x:Static props:Resources.fastboot_remove_device}" Grid.Column="1"/>
+                                <Button x:Name="fastboot_reboot_system" Margin="5 5 5 5" Content="{x:Static props:Resources.fastboot_reboot_system}" Grid.Column="2"/>
+                                <Button x:Name="fastboot_reboot_recovery" Margin="5 5 5 5" Content="{x:Static props:Resources.fastboot_reboot_recovery}" Grid.Column="3"/>
                             </Grid>
                         </Grid>
                     </Grid>

@@ -434,7 +434,7 @@ namespace FastbootEnhance
                 if (!checkCurDevExist())
                     return;
                 cur_status = FastbootStatus.show_actions;
-                MainWindow.THIS.fastboot_cur_device.Content = Properties.Resources.fastboot_current_device + cur.name + " (" + cur.serial + ")";
+                MainWindow.THIS.fastboot_cur_device.Content = Properties.Resources.fastboot_current_device + cur.serial;
                 change_page();
             };
 
@@ -460,6 +460,32 @@ namespace FastbootEnhance
                     new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
                 .Start(new StepCmdRunnerParam("reboot fastboot", 3, false));
                 }
+            };
+
+            MainWindow.THIS.fastboot_reboot_system.Click += delegate
+            {
+                if (!checkCurDevExist())
+                    return;
+
+                new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
+                .Start(new StepCmdRunnerParam("reboot", 0, false));
+
+                cur_serial = null;
+                cur_status = FastbootStatus.show_devices;
+                change_page();
+            };
+
+            MainWindow.THIS.fastboot_reboot_recovery.Click += delegate
+            {
+                if (!checkCurDevExist())
+                    return;
+
+                new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
+                .Start(new StepCmdRunnerParam("reboot recovery", 0, false));
+
+                cur_serial = null;
+                cur_status = FastbootStatus.show_devices;
+                change_page();
             };
 
             MainWindow.THIS.fastboot_ab_switch.Click += delegate

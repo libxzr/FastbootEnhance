@@ -466,6 +466,24 @@ namespace FastbootEnhance.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Reboot to Recovery 的本地化字符串。
+        /// </summary>
+        public static string fastboot_reboot_recovery {
+            get {
+                return ResourceManager.GetString("fastboot_reboot_recovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Reboot to System 的本地化字符串。
+        /// </summary>
+        public static string fastboot_reboot_system {
+            get {
+                return ResourceManager.GetString("fastboot_reboot_system", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Disconnect 的本地化字符串。
         /// </summary>
         public static string fastboot_remove_device {
