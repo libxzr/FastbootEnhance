@@ -282,11 +282,13 @@ namespace FastbootEnhance
             public string cmd;
             public int step_count;
             public bool show_dialog_on_done;
-            public StepCmdRunnerParam(string cmd, int step_count, bool hint_on_done)
+            public bool skip_var_refresh;
+            public StepCmdRunnerParam(string cmd, int step_count, bool hint_on_done, bool skip_var_refresh = false)
             {
                 this.cmd = cmd;
                 this.step_count = step_count;
                 this.show_dialog_on_done = hint_on_done;
+                this.skip_var_refresh = skip_var_refresh;
             }
         }
 
@@ -323,7 +325,8 @@ namespace FastbootEnhance
 
             MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
             {
-                load_fastboot_vars();
+                if (!param.skip_var_refresh)
+                    load_fastboot_vars();
                 if (param.show_dialog_on_done)
                     MessageBox.Show(Properties.Resources.operation_completed);
             }));
@@ -468,7 +471,7 @@ namespace FastbootEnhance
                     return;
 
                 new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
-                .Start(new StepCmdRunnerParam("reboot", 0, false));
+                .Start(new StepCmdRunnerParam("reboot", 0, false, true));
 
                 cur_serial = null;
                 cur_status = FastbootStatus.show_devices;
@@ -481,7 +484,7 @@ namespace FastbootEnhance
                     return;
 
                 new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
-                .Start(new StepCmdRunnerParam("reboot recovery", 0, false));
+                .Start(new StepCmdRunnerParam("reboot recovery", 0, false, true));
 
                 cur_serial = null;
                 cur_status = FastbootStatus.show_devices;
