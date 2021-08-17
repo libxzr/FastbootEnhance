@@ -247,7 +247,7 @@
     <value>Value</value>
   </data>
   <data name="fastboot_reboot_bootloader" xml:space="preserve">
-    <value>Reboot to Bootloader</value>
+    <value>Reboot to BootLoader</value>
   </data>
   <data name="fastboot_reboot_fastbootd" xml:space="preserve">
     <value>Reboot to Fastbootd</value>

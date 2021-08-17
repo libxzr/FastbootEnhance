@@ -121,7 +121,7 @@
     <value>关于</value>
   </data>
   <data name="author" xml:space="preserve">
-    <value>作者： LibXZR @ akr-developers.com</value>
+    <value>作者：LibXZR @ akr-developers.com</value>
   </data>
   <data name="disabled" xml:space="preserve">
     <value>未启用</value>
@@ -142,10 +142,10 @@
     <value>Virtual A/B 临时分区存在</value>
   </data>
   <data name="fastboot_cow_exist_str1" xml:space="preserve">
-    <value>当前设备中存在 Virtual A/B 更新中创建的临时分区，强行继续可能造成因super分区空间不足而导致的镜像刷入失败，从而无法启动。</value>
+    <value>当前设备中存在 Virtual A/B 更新中创建的临时分区，强行继续可能造成因 super 分区空间不足而导致的镜像刷入失败，从而无法启动。</value>
   </data>
   <data name="fastboot_cow_exist_str2" xml:space="preserve">
-    <value>（在Virtual A/B 更新未在进行的前提下，您可以手动删除动态分区中以cow结尾的临时分区以解决此警告）</value>
+    <value>（在 Virtual A/B 更新未在进行的前提下，您可以手动删除动态分区中以 cow 结尾的临时分区以解决此警告）</value>
   </data>
   <data name="fastboot_cow_exist_str3" xml:space="preserve">
     <value>要强行继续刷入吗？</value>
@@ -178,7 +178,7 @@
     <value>根据分区名过滤：</value>
   </data>
   <data name="fastboot_flash_payload" xml:space="preserve">
-    <value>刷写Payload.bin</value>
+    <value>刷写 Payload.bin</value>
   </data>
   <data name="fastboot_ignore_unknown" xml:space="preserve">
     <value>忽略未知分区</value>
@@ -244,10 +244,10 @@
     <value>属性值</value>
   </data>
   <data name="fastboot_reboot_bootloader" xml:space="preserve">
-    <value>重启到Bootloader</value>
+    <value>重启到 BootLoader</value>
   </data>
   <data name="fastboot_reboot_fastbootd" xml:space="preserve">
-    <value>重启到Fastbootd</value>
+    <value>重启到 Fastbootd</value>
   </data>
   <data name="fastboot_reboot_recovery" xml:space="preserve">
     <value>重启到恢复模式</value>
@@ -259,7 +259,7 @@
     <value>移除设备</value>
   </data>
   <data name="fastboot_seamless_update" xml:space="preserve">
-    <value>无缝更新 (A/B分区)</value>
+    <value>无缝更新 (A/B 分区)</value>
   </data>
   <data name="fastboot_secure_boot" xml:space="preserve">
     <value>安全启动</value>
@@ -268,10 +268,10 @@
     <value>序列号</value>
   </data>
   <data name="fastboot_setactive_a" xml:space="preserve">
-    <value>切换到a分区</value>
+    <value>切换到 A 插槽</value>
   </data>
   <data name="fastboot_setactive_b" xml:space="preserve">
-    <value>切换到b分区</value>
+    <value>切换到 B 插槽</value>
   </data>
   <data name="fastboot_show_logs" xml:space="preserve">
     <value>显示日志</value>
@@ -286,7 +286,7 @@
     <value>您可以勾选“忽略未知分区” 来消除此警告，存在未知分区并不代表分区刷入会失败抑或设备会无法启动。</value>
   </data>
   <data name="fastboot_unknown_partition_str2" xml:space="preserve">
-    <value>可能需要切换到fastbootd模式</value>
+    <value>可能需要切换到 Fastbootd 模式</value>
   </data>
   <data name="fastboot_update_status" xml:space="preserve">
     <value>系统更新状态</value>
@@ -313,7 +313,7 @@
     <value>要强行继续刷入吗？</value>
   </data>
   <data name="fastboot_vbmeta_disable_verify" xml:space="preserve">
-    <value>要禁用vbmeta中的校验吗？</value>
+    <value>要禁用 vbmeta 校验吗？</value>
   </data>
   <data name="fastboot_vbmeta_disable_verify_title" xml:space="preserve">
     <value>禁用校验</value>
@@ -451,7 +451,7 @@
     <value>不兼容的文件格式。</value>
   </data>
   <data name="payload_version" xml:space="preserve">
-    <value>Payload版本</value>
+    <value>Payload 版本</value>
   </data>
   <data name="release_at" xml:space="preserve">
     <value>发布于 www.akr-developers.com</value>
