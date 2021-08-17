@@ -1,14 +1,14 @@
 # Fastboot Enhance
-A user-friendly **Fastboot ToolBox** & **Payload Dumper** for Windows
 
+![A user-friendly **Fastboot ToolBox** & **Payload Dumper** for Windows](screenshots/Banner.png)
 
-<img src="https://raw.githubusercontent.com/xzr467706992/FastbootEnhance/master/screenshots/ss1.png" width="400" height="300" /> <img src="https://raw.githubusercontent.com/xzr467706992/FastbootEnhance/master/screenshots/ss2.png" width="400" height="300" />
-<img src="https://raw.githubusercontent.com/xzr467706992/FastbootEnhance/master/screenshots/ss3.png" width="400" height="300" /> <img src="https://raw.githubusercontent.com/xzr467706992/FastbootEnhance/master/screenshots/ss4.png" width="400" height="300" />
+<img src="screenshots/ss1.png" width="400" height="300" /> <img src="screenshots/ss2.png" width="400" height="300" />
+<img src="screenshots/ss3.png" width="400" height="300" /> <img src="screenshots/ss4.png" width="400" height="300" />
 
 ## What can it do?
 
 - Show fastboot vars
-- Switch between fastbootd & bootloader
+- Switch between fastbootd, bootloader, recovery & system
 - Switch between A & B slot
 - **Flash Payload.bin in fastbootd**
 - Flash images
@@ -45,10 +45,7 @@ A user-friendly **Fastboot ToolBox** & **Payload Dumper** for Windows
 
 ## Credits
 
-
-
 - [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)
-
 - [DotNetZip](https://github.com/haf/DotNetZip.Semverd)
 - [Protobuf](https://github.com/protocolbuffers/protobuf)
 - [XZ.NET](https://github.com/RomanBelkov/XZ.NET)
