@@ -48,8 +48,17 @@ namespace FastbootEnhance
                 {
                     foreach (InstallOperation installOperation in partitionUpdate.Operations)
                     {
+                        byte[] raw_data = null;
                         binaryReader.BaseStream.Seek(data_start + (long)installOperation.DataOffset, SeekOrigin.Begin);
-                        byte[] raw_data = binaryReader.ReadBytes((int)installOperation.DataLength);
+                        while (raw_data == null)
+                        {
+                            try
+                            {
+                                raw_data = binaryReader.ReadBytes((int)installOperation.DataLength);
+                            }
+                            catch (BadCrcException) {}
+                        }
+
                         if (!ignore_checks && installOperation.HasDataSha256Hash &&
                             installOperation.DataSha256Hash.ToBase64() != Convert.ToBase64String(Sha256.ComputeHash(raw_data)))
                             return new PayloadExtractionException("Block hash check failed");
