@@ -723,6 +723,7 @@ namespace FastbootEnhance
                                 {
                                     action_unlock();
                                 }));
+                                payload.Dispose();
                                 return;
                             }
 
@@ -763,6 +764,7 @@ namespace FastbootEnhance
                         }));
 
                         new DirectoryInfo(".\\tmp").Delete(true);
+                        payload.Dispose();
                     })).Start();
                 }), "Zip|*.zip|Payload Binary|*.bin");
             };
