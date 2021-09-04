@@ -1,5 +1,6 @@
 ﻿using ChromeosUpdateEngine;
 using Google.Protobuf;
+using Ionic.Zip;
 using System;
 using System.IO;
 using System.Linq;
@@ -189,9 +190,36 @@ namespace FastbootEnhance
             }
         }
 
+        public static Payload loadPayload(string filename)
+        {
+            if (filename.EndsWith(".zip"))
+            {
+                ZipInputStream zipInputStream = new ZipInputStream(new FileStream(filename, FileMode.Open));
+                ZipEntry zipEntry;
+                while (true)
+                {
+                    zipEntry = zipInputStream.GetNextEntry();
+                    if (zipEntry == null)
+                    {
+                        zipInputStream.Close();
+                        throw new Exception("Unable to find entry");
+                    }
+                    if (zipEntry.FileName == "payload.bin")
+                        break;
+                }
+                return new Payload(zipInputStream);
+            }
+            return new Payload(filename);
+        }
+
         public Payload(string path)
         {
             binaryReader = new BinaryReader(new FileStream(path, FileMode.Open));
+        }
+
+        public Payload(Stream stream)
+        {
+            binaryReader = new BinaryReader(stream);
         }
 
         ~Payload()

@@ -35,7 +35,7 @@ namespace FastbootEnhance
         {
             try
             {
-                payload = new Payload(filename);
+                payload = Payload.loadPayload(filename);
             }
             catch (Exception e)
             {
