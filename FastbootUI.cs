@@ -545,7 +545,7 @@ namespace FastbootEnhance
                     }
                     new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
                 .Start(new StepCmdRunnerParam("flash " + ext_arg + " \"" + target + "\" \"" + path + "\"", -1, true));
-                }));
+                }), "Image File|*.img;*.image");
             };
 
             MainWindow.THIS.fastboot_erase.Click += delegate
@@ -764,7 +764,7 @@ namespace FastbootEnhance
 
                         new DirectoryInfo(".\\tmp").Delete(true);
                     })).Start();
-                }));
+                }), "Zip|*.zip|Payload Binary|*.bin");
             };
 
             listHelper = new Helper.ListHelper<fastboot_partition_row>(MainWindow.THIS.fastboot_partition_list,

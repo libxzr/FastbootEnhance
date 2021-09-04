@@ -83,7 +83,7 @@ namespace FastbootEnhance
                 Helper.fileSelect(new Helper.PathSelectCallback(delegate (string ret)
                 {
                     onLoad(ret);
-                }));
+                }), "Zip|*.zip|Payload Binary|*.bin");
             };
 
             MainWindow.THIS.payload_remove.Click += delegate
@@ -170,6 +170,12 @@ namespace FastbootEnhance
                 if (files.Length > 1)
                 {
                     MessageBox.Show(Properties.Resources.payload_unable_drop_multifile);
+                    return;
+                }
+                string filename = files.GetValue(0).ToString();
+                if (!filename.EndsWith(".bin") || !filename.EndsWith(".zip"))
+                {
+                    MessageBox.Show(Properties.Resources.payload_unsupported_format);
                     return;
                 }
                 onLoad(files.GetValue(0).ToString());

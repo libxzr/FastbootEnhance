@@ -54,9 +54,10 @@ namespace FastbootEnhance
         }
 
         public delegate void PathSelectCallback(string path);
-        public static void fileSelect(PathSelectCallback callback)
+        public static void fileSelect(PathSelectCallback callback, string filter = "All Files|*.*")
         {
             System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            openFileDialog.Filter = filter;
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 callback(openFileDialog.FileName);
