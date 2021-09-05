@@ -718,7 +718,7 @@ namespace FastbootEnhance
                             return;
                         }
 
-                        Directory.CreateDirectory(".\\tmp");
+                        Directory.CreateDirectory(PAYLOAD_TMP);
 
                         action_lock();
                         new Thread(new ThreadStart(delegate
@@ -729,7 +729,7 @@ namespace FastbootEnhance
                             {
                                 appendLog("Extracting " + partitionUpdate.PartitionName);
                                 Payload.PayloadExtractionException e = payload.extract(partitionUpdate.PartitionName,
-                                    ".\\tmp", false, false);
+                                    PAYLOAD_TMP, false, false);
 
                                 if (e != null)
                                 {
@@ -753,7 +753,7 @@ namespace FastbootEnhance
                             foreach (PartitionUpdate partitionUpdate in payload.manifest.Partitions)
                             {
                                 using (Fastboot fastboot = new Fastboot
-                                (cur_serial, "flash \"" + partitionUpdate.PartitionName + "\" \".\\tmp\\" + partitionUpdate.PartitionName + ".img\""))
+                                (cur_serial, "flash \"" + partitionUpdate.PartitionName + "\" \"" + PAYLOAD_TMP + "\\" + partitionUpdate.PartitionName + ".img\""))
                                 {
                                     while (true)
                                     {
@@ -778,7 +778,6 @@ namespace FastbootEnhance
                                 MessageBox.Show(Properties.Resources.operation_completed);
                             }));
 
-                            new DirectoryInfo(".\\tmp").Delete(true);
                             payload.Dispose();
                         })).Start();
                     });
