@@ -15,6 +15,13 @@ namespace FastbootEnhance
         {
             InitializeComponent();
             THIS = this;
+
+            try
+            {
+                new DirectoryInfo(Payload.PAYLOAD_TMP).Delete(true);
+            }
+            catch (DirectoryNotFoundException) { }
+
             PayloadUI.init();
             FastbootUI.init();
 
