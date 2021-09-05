@@ -664,7 +664,7 @@ namespace FastbootEnhance
                     Payload payload;
                     try
                     {
-                        payload = Payload.loadPayload(path);
+                        payload = new Payload(path);
                     }
                     catch (Exception e)
                     {

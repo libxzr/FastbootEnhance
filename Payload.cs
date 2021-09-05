@@ -1,6 +1,5 @@
 ﻿using ChromeosUpdateEngine;
 using Google.Protobuf;
-using Ionic.Zip;
 using System;
 using System.IO;
 using System.Linq;
@@ -48,17 +47,8 @@ namespace FastbootEnhance
                 {
                     foreach (InstallOperation installOperation in partitionUpdate.Operations)
                     {
-                        byte[] raw_data = null;
                         binaryReader.BaseStream.Seek(data_start + (long)installOperation.DataOffset, SeekOrigin.Begin);
-                        while (raw_data == null)
-                        {
-                            try
-                            {
-                                raw_data = binaryReader.ReadBytes((int)installOperation.DataLength);
-                            }
-                            catch (BadCrcException) {}
-                        }
-
+                        byte[] raw_data = binaryReader.ReadBytes((int)installOperation.DataLength);
                         if (!ignore_checks && installOperation.HasDataSha256Hash &&
                             installOperation.DataSha256Hash.ToBase64() != Convert.ToBase64String(Sha256.ComputeHash(raw_data)))
                             return new PayloadExtractionException("Block hash check failed");
@@ -199,36 +189,9 @@ namespace FastbootEnhance
             }
         }
 
-        public static Payload loadPayload(string filename)
-        {
-            if (filename.EndsWith(".zip"))
-            {
-                ZipInputStream zipInputStream = new ZipInputStream(new FileStream(filename, FileMode.Open));
-                ZipEntry zipEntry;
-                while (true)
-                {
-                    zipEntry = zipInputStream.GetNextEntry();
-                    if (zipEntry == null)
-                    {
-                        zipInputStream.Close();
-                        throw new Exception("Unable to find entry");
-                    }
-                    if (zipEntry.FileName == "payload.bin")
-                        break;
-                }
-                return new Payload(zipInputStream);
-            }
-            return new Payload(filename);
-        }
-
         public Payload(string path)
         {
             binaryReader = new BinaryReader(new FileStream(path, FileMode.Open));
-        }
-
-        public Payload(Stream stream)
-        {
-            binaryReader = new BinaryReader(stream);
         }
 
         ~Payload()
