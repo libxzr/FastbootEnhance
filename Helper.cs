@@ -1,11 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Controls;
 
 namespace FastbootEnhance
 {
     class Helper
     {
+
+        public static void offloadAndRun(Action bigtask, Action callbackOnUIThread)
+        {
+            new Thread(new ThreadStart(delegate
+            {
+                bigtask();
+                MainWindow.THIS.Dispatcher.Invoke(callbackOnUIThread);
+            })).Start();
+        }
         public class ListHelper<T>
         {
             public delegate bool Filter(T t);

@@ -33,29 +33,44 @@ namespace FastbootEnhance
 
         static void onLoad(string filename)
         {
-            try
-            {
-                payload = new Payload(filename);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-                return;
-            }
+            Exception exception = null;
 
-            Payload.PayloadInitException exc = payload.init();
-            if (exc != null)
+            Action load = new Action(delegate
             {
-                payload.Dispose();
-                payload = null;
-                MessageBox.Show(Properties.Resources.payload_unsupported_format + "\n" + exc.Message);
-                return;
-            }
+                try
+                {
+                    payload = new Payload(filename);
+                }
+                catch (Exception e)
+                {
+                    exception = e;
+                }
+            });
 
-            cur_status = page_status.loaded;
-            MainWindow.THIS.payload_cur_open.Content = Properties.Resources.payload_current_file + filename;
-            refreshData();
-            switchMainView();
+            Action afterLoad = new Action(delegate
+            {
+                if (exception != null)
+                {
+                    MessageBox.Show(exception.Message);
+                    return;
+                }
+
+                Payload.PayloadInitException exc = payload.init();
+                if (exc != null)
+                {
+                    payload.Dispose();
+                    payload = null;
+                    MessageBox.Show(Properties.Resources.payload_unsupported_format + "\n" + exc.Message);
+                    return;
+                }
+
+                cur_status = page_status.loaded;
+                MainWindow.THIS.payload_cur_open.Content = Properties.Resources.payload_current_file + filename;
+                refreshData();
+                switchMainView();
+            });
+
+            Helper.offloadAndRun(load, afterLoad);
         }
 
         static void actionInit()
