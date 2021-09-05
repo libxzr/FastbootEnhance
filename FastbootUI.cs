@@ -678,6 +678,9 @@ namespace FastbootEnhance
 
                     Action afterLoad = new Action(delegate
                     {
+                        action_unlock();
+                        MainWindow.THIS.fastboot_progress_bar.IsIndeterminate = false;
+
                         if (exception != null)
                         {
                             MessageBox.Show(exception.Message);
@@ -778,7 +781,8 @@ namespace FastbootEnhance
                             payload.Dispose();
                         })).Start();
                     });
-
+                    action_lock();
+                    MainWindow.THIS.fastboot_progress_bar.IsIndeterminate = true;
                     Helper.offloadAndRun(beforeLoad, afterLoad);
                 }), "Zip|*.zip|Payload Binary|*.bin");
             };
