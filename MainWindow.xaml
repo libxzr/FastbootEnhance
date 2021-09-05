@@ -154,6 +154,7 @@
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <Label Content="{x:Static props:Resources.payload_no_file_str}" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
+                            <ProgressBar x:Name="payload_opening" Height="30" VerticalAlignment="Bottom" Visibility="Hidden" IsIndeterminate="True"></ProgressBar>
                             <Button x:Name="payload_load_btn" Content="{x:Static props:Resources.payload_browse}" Grid.Row="1" Width="100" Height="30"/>
                         </Grid>
                     </Grid>

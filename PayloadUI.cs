@@ -35,6 +35,9 @@ namespace FastbootEnhance
         {
             Exception exception = null;
 
+            MainWindow.THIS.payload_load_btn.Visibility = Visibility.Hidden;
+            MainWindow.THIS.payload_opening.Visibility = Visibility.Visible;
+
             Action load = new Action(delegate
             {
                 try
@@ -49,6 +52,9 @@ namespace FastbootEnhance
 
             Action afterLoad = new Action(delegate
             {
+                MainWindow.THIS.payload_load_btn.Visibility = Visibility.Visible;
+                MainWindow.THIS.payload_opening.Visibility = Visibility.Hidden;
+
                 if (exception != null)
                 {
                     MessageBox.Show(exception.Message);
