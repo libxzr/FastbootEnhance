@@ -661,111 +661,125 @@ namespace FastbootEnhance
 
                 Helper.fileSelect(new Helper.PathSelectCallback(delegate (string path)
                 {
-                    Payload payload;
-                    try
-                    {
-                        payload = new Payload(path);
-                    }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show(e.Message);
-                        return;
-                    }
+                    Payload payload = null;
+                    Exception exception = null;
 
-                    Payload.PayloadInitException exc = payload.init();
-                    if (exc != null)
+                    Action beforeLoad = new Action(delegate
                     {
-                        payload.Dispose();
-                        payload = null;
-                        MessageBox.Show(Properties.Resources.payload_unsupported_format + "\n" + exc.Message);
-                        return;
-                    }
-
-                    //Ensure that all partitions are there
-                    string unknown_partition_list = "";
-                    foreach (PartitionUpdate partitionUpdate in payload.manifest.Partitions)
-                    {
-                        long size;
-                        if (MainWindow.THIS.ignore_unknown_part.IsChecked == false
-                        && !fastbootData.partition_size.TryGetValue(partitionUpdate.PartitionName, out size)
-                        && !fastbootData.partition_size.TryGetValue(partitionUpdate.PartitionName + "_" + fastbootData.current_slot, out size))
+                        try
                         {
-                            unknown_partition_list += partitionUpdate.PartitionName + " ";
+                            payload = new Payload(path);
                         }
-                    }
+                        catch (Exception e)
+                        {
+                            exception = e;
+                        }
+                    });
 
-                    if (unknown_partition_list != "")
+                    Action afterLoad = new Action(delegate
                     {
-                        string message_append = fastbootData.fastbootd ?
-                        "\n" + Properties.Resources.fastboot_unknown_partition_str1 : "\n" + Properties.Resources.fastboot_unknown_partition_str2;
-                        MessageBox.Show(Properties.Resources.fastboot_unknown_partition_str0 + "\n" + unknown_partition_list + message_append);
-                        payload.Dispose();
-                        return;
-                    }
+                        if (exception != null)
+                        {
+                            MessageBox.Show(exception.Message);
+                            return;
+                        }
+                        Payload.PayloadInitException exc = payload.init();
+                        if (exc != null)
+                        {
+                            payload.Dispose();
+                            payload = null;
+                            MessageBox.Show(Properties.Resources.payload_unsupported_format + "\n" + exc.Message);
+                            return;
+                        }
 
-                    Directory.CreateDirectory(".\\tmp");
-
-                    action_lock();
-                    new Thread(new ThreadStart(delegate
-                    {
-                        int count_full = payload.manifest.Partitions.Count * 2;
-                        int count = 0;
+                        //Ensure that all partitions are there
+                        string unknown_partition_list = "";
                         foreach (PartitionUpdate partitionUpdate in payload.manifest.Partitions)
                         {
-                            appendLog("Extracting " + partitionUpdate.PartitionName);
-                            Payload.PayloadExtractionException e = payload.extract(partitionUpdate.PartitionName,
-                                ".\\tmp", false, false);
-
-                            if (e != null)
+                            long size;
+                            if (MainWindow.THIS.ignore_unknown_part.IsChecked == false
+                            && !fastbootData.partition_size.TryGetValue(partitionUpdate.PartitionName, out size)
+                            && !fastbootData.partition_size.TryGetValue(partitionUpdate.PartitionName + "_" + fastbootData.current_slot, out size))
                             {
-                                MessageBox.Show(e.Message);
-                                MainWindow.THIS.Dispatcher.Invoke(new Action(delegate
-                                {
-                                    action_unlock();
-                                }));
-                                payload.Dispose();
-                                return;
+                                unknown_partition_list += partitionUpdate.PartitionName + " ";
                             }
-
-                            appendLog("Extracted " + partitionUpdate.PartitionName);
-
-                            MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
-                            {
-                                MainWindow.THIS.fastboot_progress_bar.Value = 100 * ++count / count_full;
-                            }));
                         }
 
-                        foreach (PartitionUpdate partitionUpdate in payload.manifest.Partitions)
+                        if (unknown_partition_list != "")
                         {
-                            using (Fastboot fastboot = new Fastboot
-                            (cur_serial, "flash \"" + partitionUpdate.PartitionName + "\" \".\\tmp\\" + partitionUpdate.PartitionName + ".img\""))
+                            string message_append = fastbootData.fastbootd ?
+                            "\n" + Properties.Resources.fastboot_unknown_partition_str1 : "\n" + Properties.Resources.fastboot_unknown_partition_str2;
+                            MessageBox.Show(Properties.Resources.fastboot_unknown_partition_str0 + "\n" + unknown_partition_list + message_append);
+                            payload.Dispose();
+                            return;
+                        }
+
+                        Directory.CreateDirectory(".\\tmp");
+
+                        action_lock();
+                        new Thread(new ThreadStart(delegate
+                        {
+                            int count_full = payload.manifest.Partitions.Count * 2;
+                            int count = 0;
+                            foreach (PartitionUpdate partitionUpdate in payload.manifest.Partitions)
                             {
-                                while (true)
+                                appendLog("Extracting " + partitionUpdate.PartitionName);
+                                Payload.PayloadExtractionException e = payload.extract(partitionUpdate.PartitionName,
+                                    ".\\tmp", false, false);
+
+                                if (e != null)
                                 {
-                                    string err = fastboot.stderr.ReadLine();
-
-                                    if (err == null)
-                                        break;
-
-                                    appendLog(err);
+                                    MessageBox.Show(e.Message);
+                                    MainWindow.THIS.Dispatcher.Invoke(new Action(delegate
+                                    {
+                                        action_unlock();
+                                    }));
+                                    payload.Dispose();
+                                    return;
                                 }
+
+                                appendLog("Extracted " + partitionUpdate.PartitionName);
 
                                 MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
                                 {
                                     MainWindow.THIS.fastboot_progress_bar.Value = 100 * ++count / count_full;
                                 }));
                             }
-                        }
 
-                        MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
-                        {
-                            load_fastboot_vars();
-                            MessageBox.Show(Properties.Resources.operation_completed);
-                        }));
+                            foreach (PartitionUpdate partitionUpdate in payload.manifest.Partitions)
+                            {
+                                using (Fastboot fastboot = new Fastboot
+                                (cur_serial, "flash \"" + partitionUpdate.PartitionName + "\" \".\\tmp\\" + partitionUpdate.PartitionName + ".img\""))
+                                {
+                                    while (true)
+                                    {
+                                        string err = fastboot.stderr.ReadLine();
 
-                        new DirectoryInfo(".\\tmp").Delete(true);
-                        payload.Dispose();
-                    })).Start();
+                                        if (err == null)
+                                            break;
+
+                                        appendLog(err);
+                                    }
+
+                                    MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
+                                    {
+                                        MainWindow.THIS.fastboot_progress_bar.Value = 100 * ++count / count_full;
+                                    }));
+                                }
+                            }
+
+                            MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
+                            {
+                                load_fastboot_vars();
+                                MessageBox.Show(Properties.Resources.operation_completed);
+                            }));
+
+                            new DirectoryInfo(".\\tmp").Delete(true);
+                            payload.Dispose();
+                        })).Start();
+                    });
+
+                    Helper.offloadAndRun(beforeLoad, afterLoad);
                 }), "Zip|*.zip|Payload Binary|*.bin");
             };
 
