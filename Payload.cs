@@ -1,5 +1,6 @@
 ﻿using ChromeosUpdateEngine;
 using Google.Protobuf;
+using Ionic.Zip;
 using System;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace FastbootEnhance
 {
     public class Payload : IDisposable
     {
+        const string PAYLOAD_TMP = ".\\payload.tmp";
         BinaryReader binaryReader;
         public class PayloadInitException : Exception
         {
@@ -187,10 +189,30 @@ namespace FastbootEnhance
                 binaryReader.Close();
                 binaryReader = null;
             }
+            try
+            {
+                new DirectoryInfo(PAYLOAD_TMP).Delete(true);
+            }
+            catch (DirectoryNotFoundException) { }
         }
 
         public Payload(string path)
         {
+            if (path.EndsWith(".zip"))
+            {
+                ZipFile zip = new ZipFile(path);
+                foreach (ZipEntry entry in zip.Entries)
+                {
+                    if (entry.FileName == "payload.bin")
+                    {
+                        entry.Extract(PAYLOAD_TMP);
+                        binaryReader = new BinaryReader(
+                            new FileStream(PAYLOAD_TMP + "\\payload.bin", FileMode.Open));
+                        return;
+                    }
+                }
+                throw new Exception("Unable to find entry for payload.bin");
+            }
             binaryReader = new BinaryReader(new FileStream(path, FileMode.Open));
         }
 
