@@ -129,6 +129,9 @@
   <data name="enabled" xml:space="preserve">
     <value>启用</value>
   </data>
+  <data name="error" xml:space="preserve">
+    <value>错误</value>
+  </data>
   <data name="fastboot_0_size" xml:space="preserve">
     <value>获取失败</value>
   </data>
@@ -452,6 +455,9 @@
   </data>
   <data name="payload_version" xml:space="preserve">
     <value>Payload 版本</value>
+  </data>
+  <data name="program_already_running" xml:space="preserve">
+    <value>程序已经在运行</value>
   </data>
   <data name="release_at" xml:space="preserve">
     <value>发布于 www.akr-developers.com</value>

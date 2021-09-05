@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Threading;
 using System.Windows;
 
 namespace FastbootEnhance
@@ -15,6 +16,15 @@ namespace FastbootEnhance
         {
             InitializeComponent();
             THIS = this;
+
+            string mutexName = "FastbootEnhance";
+            bool createdNew;
+            Mutex singleInstanceWatcher = new Mutex(false, mutexName, out createdNew);
+            if (!createdNew)
+            {
+                MessageBox.Show(Properties.Resources.program_already_running, Properties.Resources.error, MessageBoxButton.OK, MessageBoxImage.Error);
+                Process.GetCurrentProcess().Kill();
+            }
 
             try
             {

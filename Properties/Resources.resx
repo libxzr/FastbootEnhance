@@ -132,6 +132,9 @@
   <data name="enabled" xml:space="preserve">
     <value>Enabled</value>
   </data>
+  <data name="error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="fastboot_0_size" xml:space="preserve">
     <value>Unknown</value>
   </data>
@@ -455,6 +458,9 @@
   </data>
   <data name="payload_version" xml:space="preserve">
     <value>Payload Version</value>
+  </data>
+  <data name="program_already_running" xml:space="preserve">
+    <value>The program is already running</value>
   </data>
   <data name="release_at" xml:space="preserve">
     <value>Release at www.akr-developers.com</value>

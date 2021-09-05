@@ -106,6 +106,15 @@ namespace FastbootEnhance.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Error 的本地化字符串。
+        /// </summary>
+        public static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Unknown 的本地化字符串。
         /// </summary>
         public static string fastboot_0_size {
@@ -448,7 +457,7 @@ namespace FastbootEnhance.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Reboot to Bootloader 的本地化字符串。
+        ///   查找类似 Reboot to BootLoader 的本地化字符串。
         /// </summary>
         public static string fastboot_reboot_bootloader {
             get {
@@ -1074,6 +1083,15 @@ namespace FastbootEnhance.Properties {
         public static string payload_version {
             get {
                 return ResourceManager.GetString("payload_version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The program is already running 的本地化字符串。
+        /// </summary>
+        public static string program_already_running {
+            get {
+                return ResourceManager.GetString("program_already_running", resourceCulture);
             }
         }
         
