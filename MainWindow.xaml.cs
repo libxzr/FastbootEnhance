@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 using System.Windows;
 
 namespace FastbootEnhance
@@ -21,6 +22,13 @@ namespace FastbootEnhance
 
             Closed += delegate
             {
+                if (PayloadUI.payload != null)
+                    PayloadUI.payload.Dispose();
+                try
+                {
+                    new DirectoryInfo(Payload.PAYLOAD_TMP).Delete(true);
+                }
+                catch (DirectoryNotFoundException) { }
                 Process.GetCurrentProcess().Kill();
             };
         }

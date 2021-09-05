@@ -11,7 +11,7 @@ namespace FastbootEnhance
 {
     public class Payload : IDisposable
     {
-        const string PAYLOAD_TMP = ".\\payload.tmp";
+        public const string PAYLOAD_TMP = ".\\payload.tmp";
         BinaryReader binaryReader;
         public class PayloadInitException : Exception
         {

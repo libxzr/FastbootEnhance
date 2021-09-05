@@ -14,7 +14,7 @@ namespace FastbootEnhance
         }
 
         static page_status cur_status;
-        static Payload payload;
+        public static Payload payload;
 
         static void switchMainView()
         {
@@ -89,6 +89,7 @@ namespace FastbootEnhance
             MainWindow.THIS.payload_remove.Click += delegate
             {
                 payload.Dispose();
+                payload = null;
                 cur_status = page_status.empty;
                 switchMainView();
             };
