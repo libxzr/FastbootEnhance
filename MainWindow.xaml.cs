@@ -36,6 +36,7 @@ namespace FastbootEnhance
                     new DirectoryInfo(Payload.PAYLOAD_TMP).Delete(true);
                 }
                 catch (DirectoryNotFoundException) { }
+                catch (IOException) { }
                 Process.GetCurrentProcess().Kill();
             };
         }
