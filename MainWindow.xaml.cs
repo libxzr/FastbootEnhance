@@ -18,7 +18,13 @@ namespace FastbootEnhance
 
             try
             {
-                new DirectoryInfo(Payload.PAYLOAD_TMP).Delete(true);
+                new DirectoryInfo(PayloadUI.PAYLOAD_TMP).Delete(true);
+            }
+            catch (DirectoryNotFoundException) { }
+
+            try
+            {
+                new DirectoryInfo(FastbootUI.PAYLOAD_TMP).Delete(true);
             }
             catch (DirectoryNotFoundException) { }
 
@@ -31,12 +37,21 @@ namespace FastbootEnhance
             {
                 if (PayloadUI.payload != null)
                     PayloadUI.payload.Dispose();
+
                 try
                 {
-                    new DirectoryInfo(Payload.PAYLOAD_TMP).Delete(true);
+                    new DirectoryInfo(PayloadUI.PAYLOAD_TMP).Delete(true);
                 }
                 catch (DirectoryNotFoundException) { }
                 catch (IOException) { }
+
+                try
+                {
+                    new DirectoryInfo(FastbootUI.PAYLOAD_TMP).Delete(true);
+                }
+                catch (DirectoryNotFoundException) { }
+                catch (IOException) { }
+
                 Process.GetCurrentProcess().Kill();
             };
         }

@@ -7,6 +7,8 @@ namespace FastbootEnhance
 {
     class PayloadUI
     {
+        public const string PAYLOAD_TMP = ".\\payload.tmp.dumper";
+
         enum page_status
         {
             empty,
@@ -42,7 +44,7 @@ namespace FastbootEnhance
             {
                 try
                 {
-                    payload = new Payload(filename);
+                    payload = new Payload(filename, PAYLOAD_TMP);
                 }
                 catch (Exception e)
                 {

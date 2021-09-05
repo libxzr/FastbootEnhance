@@ -9,6 +9,7 @@ namespace FastbootEnhance
 {
     class FastbootUI
     {
+        public const string PAYLOAD_TMP = ".\\payload.tmp.fastboot";
         static List<fastboot_devices_row> devices;
         static string cur_serial;
         static FastbootData fastbootData;
@@ -668,7 +669,7 @@ namespace FastbootEnhance
                     {
                         try
                         {
-                            payload = new Payload(path);
+                            payload = new Payload(path, PAYLOAD_TMP);
                         }
                         catch (Exception e)
                         {

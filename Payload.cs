@@ -11,7 +11,7 @@ namespace FastbootEnhance
 {
     public class Payload : IDisposable
     {
-        public const string PAYLOAD_TMP = ".\\payload.tmp";
+        string payload_tmp;
         BinaryReader binaryReader;
         public class PayloadInitException : Exception
         {
@@ -191,14 +191,16 @@ namespace FastbootEnhance
             }
             try
             {
-                new DirectoryInfo(PAYLOAD_TMP).Delete(true);
+                new DirectoryInfo(payload_tmp).Delete(true);
             }
             catch (DirectoryNotFoundException) { }
             catch (IOException) { }
         }
 
-        public Payload(string path)
+        public Payload(string path, String tmpdir)
         {
+            payload_tmp = tmpdir;
+
             if (path.EndsWith(".zip"))
             {
                 ZipFile zip = new ZipFile(path);
@@ -206,9 +208,9 @@ namespace FastbootEnhance
                 {
                     if (entry.FileName == "payload.bin")
                     {
-                        entry.Extract(PAYLOAD_TMP);
+                        entry.Extract(payload_tmp);
                         binaryReader = new BinaryReader(
-                            new FileStream(PAYLOAD_TMP + "\\payload.bin", FileMode.Open));
+                            new FileStream(payload_tmp + "\\payload.bin", FileMode.Open));
                         return;
                     }
                 }
