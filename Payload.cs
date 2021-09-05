@@ -194,6 +194,7 @@ namespace FastbootEnhance
                 new DirectoryInfo(PAYLOAD_TMP).Delete(true);
             }
             catch (DirectoryNotFoundException) { }
+            catch (IOException) { }
         }
 
         public Payload(string path)
