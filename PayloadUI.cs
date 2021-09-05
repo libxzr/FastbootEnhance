@@ -138,6 +138,7 @@ namespace FastbootEnhance
                 {
                     MainWindow.THIS.payload_progress.Visibility = Visibility.Visible;
                     MainWindow.THIS.payload_action_bar.Visibility = Visibility.Hidden;
+                    Helper.TaskbarItemHelper.start();
                     System.Collections.IList selected = MainWindow.THIS.payload_partition_info.SelectedItems;
                     MainWindow.THIS.payload_extract.IsEnabled = false;
                     MainWindow.THIS.payload_extract_options.IsEnabled = false;
@@ -153,6 +154,7 @@ namespace FastbootEnhance
                             MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
                             {
                                 MainWindow.THIS.payload_progress.Value = ++now * 100 / full;
+                                Helper.TaskbarItemHelper.update(now * 100 / full);
                             }));
                             exc = payload.extract(row.name, path, ignore_unknown_op, ignore_checks);
                             if (exc != null)
@@ -160,6 +162,7 @@ namespace FastbootEnhance
                             MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
                             {
                                 MainWindow.THIS.payload_progress.Value = ++now * 100 / full;
+                                Helper.TaskbarItemHelper.update(now * 100 / full);
                             }));
                         }
 
@@ -172,6 +175,7 @@ namespace FastbootEnhance
                         {
                             MainWindow.THIS.payload_progress.Visibility = Visibility.Hidden;
                             MainWindow.THIS.payload_action_bar.Visibility = Visibility.Visible;
+                            Helper.TaskbarItemHelper.stop();
                             MainWindow.THIS.payload_extract.IsEnabled = true;
                             MainWindow.THIS.payload_extract_options.IsEnabled = true;
                         }));

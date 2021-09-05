@@ -8,6 +8,25 @@ namespace FastbootEnhance
     class Helper
     {
 
+        public class TaskbarItemHelper
+        {
+            public static void start()
+            {
+                MainWindow.THIS.taskbariteminfo.ProgressValue = 0;
+                MainWindow.THIS.taskbariteminfo.ProgressState = System.Windows.Shell.TaskbarItemProgressState.Normal;
+            }
+
+            public static void stop()
+            {
+                MainWindow.THIS.taskbariteminfo.ProgressState = System.Windows.Shell.TaskbarItemProgressState.None;
+            }
+
+            public static void update(int percent)
+            {
+                MainWindow.THIS.taskbariteminfo.ProgressValue = percent / 100.0;
+            }
+        }
+
         public static void offloadAndRun(Action bigtask, Action callbackOnUIThread)
         {
             new Thread(new ThreadStart(delegate

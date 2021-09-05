@@ -6,6 +6,9 @@
         xmlns:props="clr-namespace:FastbootEnhance.Properties"
         mc:Ignorable="d"
         Title="{x:Static props:Resources.app_name}" Height="450" Width="650" WindowStartupLocation="CenterScreen">
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="taskbariteminfo"></TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
     <Grid>
         <TabControl>
             <TabItem Header="{x:Static props:Resources.fastboot_enhance}">

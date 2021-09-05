@@ -150,6 +150,7 @@ namespace FastbootEnhance
             MainWindow.THIS.fastboot_action_bar.Visibility = Visibility.Hidden;
             MainWindow.THIS.fastboot_progress_bar.Visibility = Visibility.Visible;
             MainWindow.THIS.fastboot_progress_bar.IsIndeterminate = false;
+            Helper.TaskbarItemHelper.start();
             MainWindow.THIS.fastboot_single_part_op.IsEnabled = false;
             MainWindow.THIS.fastboot_flash_payload.IsEnabled = false;
         }
@@ -158,6 +159,7 @@ namespace FastbootEnhance
         {
             MainWindow.THIS.fastboot_progress_bar.Visibility = Visibility.Hidden;
             MainWindow.THIS.fastboot_action_bar.Visibility = Visibility.Visible;
+            Helper.TaskbarItemHelper.stop();
             MainWindow.THIS.fastboot_single_part_op.IsEnabled = true;
             MainWindow.THIS.fastboot_flash_payload.IsEnabled = true;
         }
@@ -320,6 +322,7 @@ namespace FastbootEnhance
                         MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
                         {
                             MainWindow.THIS.fastboot_progress_bar.Value = ++count * 100 / param.step_count;
+                            Helper.TaskbarItemHelper.update(count * 100 / param.step_count);
                         }));
                 }
             }
@@ -747,6 +750,7 @@ namespace FastbootEnhance
                                 MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
                                 {
                                     MainWindow.THIS.fastboot_progress_bar.Value = 100 * ++count / count_full;
+                                    Helper.TaskbarItemHelper.update(100 * count / count_full);
                                 }));
                             }
 
@@ -768,6 +772,7 @@ namespace FastbootEnhance
                                     MainWindow.THIS.Dispatcher.BeginInvoke(new Action(delegate
                                     {
                                         MainWindow.THIS.fastboot_progress_bar.Value = 100 * ++count / count_full;
+                                        Helper.TaskbarItemHelper.update(100 * count / count_full);
                                     }));
                                 }
                             }
