@@ -106,7 +106,7 @@ namespace FastbootEnhance
                 Helper.fileSelect(new Helper.PathSelectCallback(delegate (string ret)
                 {
                     onLoad(ret);
-                }), "Zip|*.zip|Payload Binary|*.bin");
+                }), "Payload|*.bin;*.zip");
             };
 
             MainWindow.THIS.payload_remove.Click += delegate

@@ -789,7 +789,7 @@ namespace FastbootEnhance
                     action_lock();
                     MainWindow.THIS.fastboot_progress_bar.IsIndeterminate = true;
                     Helper.offloadAndRun(beforeLoad, afterLoad);
-                }), "Zip|*.zip|Payload Binary|*.bin");
+                }), "Payload|*.bin;*.zip");
             };
 
             listHelper = new Helper.ListHelper<fastboot_partition_row>(MainWindow.THIS.fastboot_partition_list,
