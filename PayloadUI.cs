@@ -201,7 +201,7 @@ namespace FastbootEnhance
                     return;
                 }
                 string filename = files.GetValue(0).ToString();
-                if (!filename.EndsWith(".bin") || !filename.EndsWith(".zip"))
+                if (!filename.EndsWith(".bin") && !filename.EndsWith(".zip"))
                 {
                     MessageBox.Show(Properties.Resources.payload_unsupported_format);
                     return;
