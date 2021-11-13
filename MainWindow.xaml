@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:props="clr-namespace:FastbootEnhance.Properties"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="{x:Static props:Resources.app_name}" Height="450" Width="650" WindowStartupLocation="CenterScreen">
+        Title="{x:Static props:Resources.app_name}" Height="500" Width="800" WindowStartupLocation="CenterScreen"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        >
     <Window.TaskbarItemInfo>
         <TaskbarItemInfo x:Name="taskbariteminfo"></TaskbarItemInfo>
     </Window.TaskbarItemInfo>
@@ -64,13 +68,13 @@
                                         <RowDefinition Height="6*"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <Label Content="{x:Static props:Resources.fastboot_filter_by_partition_name}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                                    <TextBox Height="20" Margin="10 0 20 0" x:Name="fastboot_partition_name_textbox" Grid.Column="1"/>
+                                    <TextBox Height="30" Margin="10 0 20 0" x:Name="fastboot_partition_name_textbox" Grid.Column="1"/>
                                     <ListView x:Name="fastboot_partition_list" Grid.Row="1" Grid.ColumnSpan="2">
                                         <ListView.View>
                                             <GridView>
                                                 <GridViewColumn Header="{x:Static props:Resources.fastboot_partition_name}" Width="100" DisplayMemberBinding="{Binding name}"/>
-                                                <GridViewColumn Header="{x:Static props:Resources.fastboot_partition_size}" Width="100" DisplayMemberBinding="{Binding size}"/>
-                                                <GridViewColumn Header="{x:Static props:Resources.fastboot_partition_is_dynamic}" Width="100" DisplayMemberBinding="{Binding is_logical}"/>
+                                                <GridViewColumn Header="{x:Static props:Resources.fastboot_partition_size}" Width="120" DisplayMemberBinding="{Binding size}"/>
+                                                <GridViewColumn Header="{x:Static props:Resources.fastboot_partition_is_dynamic}" Width="200" DisplayMemberBinding="{Binding is_logical}"/>
                                             </GridView>
                                         </ListView.View>
                                     </ListView>
@@ -79,7 +83,7 @@
                                             <RowDefinition Height="5*"></RowDefinition>
                                             <RowDefinition></RowDefinition>
                                         </Grid.RowDefinitions>
-                                        <GroupBox x:Name="fastboot_single_part_op" Margin="10 0 10 0" Header="{x:Static props:Resources.fastboot_partition_action}">
+                                        <GroupBox x:Name="fastboot_single_part_op" Margin="10 0 10 0" Header="{x:Static props:Resources.fastboot_partition_action}" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                                             <Grid>
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition></RowDefinition>
@@ -95,7 +99,7 @@
                                                 <Button x:Name="fastboot_logical_resize" Margin="5,5,5,5" Content="{x:Static props:Resources.fastboot_partition_action_resize}" Grid.Row="4" Grid.ColumnSpan="2"/>
                                             </Grid>
                                         </GroupBox>
-                                        <CheckBox x:Name="fastboot_show_logs" Content="{x:Static props:Resources.fastboot_show_logs}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <CheckBox x:Name="fastboot_show_logs" Content="{x:Static props:Resources.fastboot_show_logs}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipOutlineCheckBox}"/>
                                     </Grid>
                                 </Grid>
                             </TabItem>
@@ -114,35 +118,34 @@
                             </Grid.ColumnDefinitions>
                             <ProgressBar x:Name="fastboot_progress_bar" Visibility="Hidden" Grid.Row="1" Grid.Column="1"/>
                         </Grid>
-
-                        <Grid x:Name="fastboot_action_bar" Grid.Row="1" Visibility="Visible">
+                        <Grid x:Name="fastboot_action_bar" Grid.Row="1" Visibility="Visible" VerticalAlignment="Bottom" Height="75">
                             <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
+                                <RowDefinition/>
+                                <RowDefinition/>
                             </Grid.RowDefinitions>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Button x:Name="fastboot_reboot_d" Margin="5,5,5,5" Content="Reboot to Bootloader" Grid.Column="0"/>
-                                <Button x:Name="fastboot_ab_switch" Margin="5,5,5,5" Content="切换分区" Grid.Column="1"/>
-                                <Button x:Name="fastboot_flash_payload" Margin="5,5,5,5" Content="{x:Static props:Resources.fastboot_flash_payload}" Grid.Column="2"/>
-                                <CheckBox x:Name="ignore_unknown_part" VerticalAlignment="Center" Content="{x:Static props:Resources.fastboot_ignore_unknown}" Margin="5,5,5,5" Grid.Column="3"/>
+                                <Button x:Name="fastboot_reboot_d" Content="Reboot to Bootloader" Grid.Column="0" Width="180"/>
+                                <Button x:Name="fastboot_ab_switch" Content="切换分区" Grid.Column="1" Width="100"/>
+                                <Button x:Name="fastboot_flash_payload" Content="{x:Static props:Resources.fastboot_flash_payload}" Grid.Column="2" Width="160"/>
+                                <CheckBox x:Name="ignore_unknown_part" VerticalAlignment="Center" Content="{x:Static props:Resources.fastboot_ignore_unknown}" Margin="5,5,5,5" Grid.Column="3" Style="{StaticResource MaterialDesignFilterChipOutlineCheckBox}"/>
                             </Grid>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1.5*" ></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Label VerticalAlignment="Center" x:Name="fastboot_cur_device" Content="{x:Static props:Resources.fastboot_current_device}" Grid.Column="0"/>
-                                <Button x:Name="fastboot_remove" Margin="5 5 5 5" Content="{x:Static props:Resources.fastboot_remove_device}" Grid.Column="1"/>
-                                <Button x:Name="fastboot_reboot_system" Margin="5 5 5 5" Content="{x:Static props:Resources.fastboot_reboot_system}" Grid.Column="2"/>
-                                <Button x:Name="fastboot_reboot_recovery" Margin="5 5 5 5" Content="{x:Static props:Resources.fastboot_reboot_recovery}" Grid.Column="3"/>
+                                <Button x:Name="fastboot_remove" Content="{x:Static props:Resources.fastboot_remove_device}" Grid.Column="1" VerticalAlignment="Center" Width="110"/>
+                                <Button x:Name="fastboot_reboot_system" Content="{x:Static props:Resources.fastboot_reboot_system}" Grid.Column="2" VerticalAlignment="Center" Width="130"/>
+                                <Button x:Name="fastboot_reboot_recovery"  Content="{x:Static props:Resources.fastboot_reboot_recovery}" Grid.Column="3" VerticalAlignment="Center" Width="140"/>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -157,7 +160,7 @@
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <Label Content="{x:Static props:Resources.payload_no_file_str}" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
-                            <ProgressBar x:Name="payload_opening" Height="30" VerticalAlignment="Bottom" Visibility="Hidden" IsIndeterminate="True"></ProgressBar>
+                            <ProgressBar x:Name="payload_opening" VerticalAlignment="Bottom" Visibility="Hidden" IsIndeterminate="True" />
                             <Button x:Name="payload_load_btn" Content="{x:Static props:Resources.payload_browse}" Grid.Row="1" Width="100" Height="30"/>
                         </Grid>
                     </Grid>
@@ -173,7 +176,7 @@
                                         <ListView.View>
                                             <GridView>
                                                 <GridViewColumn Header="{x:Static props:Resources.payload_property_name}" Width="200" DisplayMemberBinding="{Binding title}"/>
-                                                <GridViewColumn Header="{x:Static props:Resources.payload_property_value}" Width="260" DisplayMemberBinding="{Binding value}"/>
+                                                <GridViewColumn Header="{x:Static props:Resources.payload_property_value}" Width="280" DisplayMemberBinding="{Binding value}"/>
                                             </GridView>
                                         </ListView.View>
                                     </ListView>
@@ -182,41 +185,42 @@
                             <TabItem Header="{x:Static props:Resources.payload_partitions}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                                        <ColumnDefinition Width="149*"></ColumnDefinition>
+                                        <ColumnDefinition Width="47*"/>
+                                        <ColumnDefinition Width="392*"></ColumnDefinition>
                                         <ColumnDefinition Width="200"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition></RowDefinition>
                                         <RowDefinition Height="6*"></RowDefinition>
                                     </Grid.RowDefinitions>
-                                    <Label Content="{x:Static props:Resources.payload_partitions_filter_by_name}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                                    <TextBox x:Name="payload_partition_name_textbox" Height="20" Margin="10 0 20 0" Grid.Column="1"/>
-                                    <ListView x:Name="payload_partition_info" Grid.Row="1" Grid.ColumnSpan="2">
+                                    <Label Content="{x:Static props:Resources.payload_partitions_filter_by_name}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="92,0,0,0"/>
+                                    <TextBox x:Name="payload_partition_name_textbox" Height="30" Margin="10,11,20,10" Grid.Column="2"/>
+                                    <ListView x:Name="payload_partition_info" Grid.ColumnSpan="3" Margin="0,51,0,0" Grid.RowSpan="2">
                                         <ListView.View>
                                             <GridView>
                                                 <GridViewColumn Header="{x:Static props:Resources.payload_partitions_name}" Width="120" DisplayMemberBinding="{Binding name}"/>
-                                                <GridViewColumn Header="{x:Static props:Resources.payload_partitions_size}" Width="100" DisplayMemberBinding="{Binding size}"/>
-                                                <GridViewColumn Header="{x:Static props:Resources.payload_partitions_hash}" Width="120" DisplayMemberBinding="{Binding hash}"/>
+                                                <GridViewColumn Header="{x:Static props:Resources.payload_partitions_size}" Width="120" DisplayMemberBinding="{Binding size}"/>
+                                                <GridViewColumn Header="{x:Static props:Resources.payload_partitions_hash}" Width="270" DisplayMemberBinding="{Binding hash}"/>
                                             </GridView>
                                         </ListView.View>
                                     </ListView>
-                                    <Grid Grid.Column="2" Grid.Row="1">
+                                    <Grid Grid.Column="3" Margin="0,51,0,0" Grid.RowSpan="2">
                                         <Grid.RowDefinitions>
                                             <RowDefinition></RowDefinition>
                                             <RowDefinition Height="5*"></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <Button x:Name="payload_extract" Content="{x:Static props:Resources.payload_extract_image}" Margin="5" />
-                                        <GroupBox x:Name="payload_extract_options" Header="{x:Static props:Resources.payload_extract_options}" Grid.Row="1" Margin="4">
+                                        <GroupBox x:Name="payload_extract_options" Header="{x:Static props:Resources.payload_extract_options}" Grid.Row="1" Margin="4" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                                             <Grid>
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition></RowDefinition>
                                                     <RowDefinition></RowDefinition>
                                                     <RowDefinition></RowDefinition>
                                                 </Grid.RowDefinitions>
-                                                <CheckBox x:Name="payload_ignore_delta" Content="{x:Static props:Resources.payload_extract_incremental}" VerticalAlignment="Center"/>
-                                                <CheckBox x:Name="payload_ignore_unknown_op" Content="{x:Static props:Resources.payload_extract_ignore_unknown}" Grid.Row="1" VerticalAlignment="Center"/>
-                                                <CheckBox x:Name="payload_ignore_check" Content="{x:Static props:Resources.payload_extract_ignore_verify}" Grid.Row="2" VerticalAlignment="Center"/>
+                                                <CheckBox x:Name="payload_ignore_delta" Content="{x:Static props:Resources.payload_extract_incremental}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipOutlineCheckBox}"/>
+                                                <CheckBox x:Name="payload_ignore_unknown_op" Content="{x:Static props:Resources.payload_extract_ignore_unknown}" Grid.Row="1" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipOutlineCheckBox}"/>
+                                                <CheckBox x:Name="payload_ignore_check" Content="{x:Static props:Resources.payload_extract_ignore_verify}" Grid.Row="2" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipOutlineCheckBox}"/>
                                             </Grid>
                                         </GroupBox>
                                     </Grid>
@@ -248,7 +252,7 @@
                             <ProgressBar x:Name="payload_progress" Visibility="Hidden" Grid.Row="1" Grid.Column="1"/>
                         </Grid>
 
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" HorizontalAlignment="Stretch">
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition Height="2*"></RowDefinition>
@@ -259,7 +263,7 @@
                                     <ColumnDefinition Width="4*"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button x:Name="payload_remove" Margin="5 5 5 5" Content="{x:Static props:Resources.payload_remove_file}" Grid.Column="1"/>
+                                <Button x:Name="payload_remove" Content="{x:Static props:Resources.payload_remove_file}" Grid.Column="1" Margin="-15,0,20,0"/>
                                 <Label x:Name="payload_cur_open" Content="当前打开的文件" VerticalAlignment="Center"/>
                             </Grid>
                         </Grid>
@@ -273,8 +277,8 @@
                         <Label Content="Fastboot Enhance" Canvas.Left="211" Canvas.Top="53" FontSize="20"/>
                         <Label Content="{x:Static props:Resources.author}" Canvas.Left="192" Canvas.Top="94"/>
                         <Label Content="{x:Static props:Resources.release_at}" Canvas.Left="211" Canvas.Top="118"/>
-                        <Button Content="{x:Static props:Resources.visit_thread}" Canvas.Left="211" Canvas.Top="149" Width="75" Click="Thread_Click"/>
-                        <Button Content="{x:Static props:Resources.open_source}" Canvas.Left="317" Canvas.Top="149" Width="75" Click="OSS_Click"/>
+                        <Button Content="{x:Static props:Resources.visit_thread}" Canvas.Left="211" Canvas.Top="149" Click="Thread_Click"/>
+                        <Button Content="{x:Static props:Resources.open_source}" Canvas.Left="317" Canvas.Top="149" Click="OSS_Click"/>
                     </Canvas>
                 </Grid>
             </TabItem>
