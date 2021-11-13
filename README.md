@@ -23,7 +23,7 @@
 
 ## Usage
 
-- Make sure `.NET Framework 4.5+` is supported
+- Make sure `.NET Framework 4.7.2` is supported
 
 - Download `Release.zip` from [Github Releases](https://github.com/xzr467706992/FastbootEnhance/releases)
 - Unzip
@@ -49,3 +49,4 @@
 - [DotNetZip](https://github.com/haf/DotNetZip.Semverd)
 - [Protobuf](https://github.com/protocolbuffers/protobuf)
 - [XZ.NET](https://github.com/RomanBelkov/XZ.NET)
+- [MDIX](https://github.com/MaterialDesignInXAML)
