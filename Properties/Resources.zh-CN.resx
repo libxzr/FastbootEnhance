@@ -139,7 +139,7 @@
     <value>基本属性</value>
   </data>
   <data name="fastboot_choose_device" xml:space="preserve">
-    <value>选择操作的目标设备（双击）：</value>
+    <value>选择操作的目标设备：</value>
   </data>
   <data name="fastboot_cow_exist_str0" xml:space="preserve">
     <value>Virtual A/B 临时分区存在</value>
