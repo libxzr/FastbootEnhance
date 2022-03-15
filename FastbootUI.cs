@@ -263,10 +263,12 @@ namespace FastbootEnhance
                     if (vab_status_str == Properties.Resources.fastboot_update_status_snapshotted)
                     {
                         MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Visible;
+                        MainWindow.THIS.fastboot_cancel_update.Content = Properties.Resources.fastboot_cancel_update;
                     }
                     else if (vab_status_str == Properties.Resources.fastboot_update_status_merging)
                     {
                         MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Visible;
+                        MainWindow.THIS.fastboot_cancel_update.Content = Properties.Resources.fastboot_cancel_update;
                     }
                     else 
                     {
