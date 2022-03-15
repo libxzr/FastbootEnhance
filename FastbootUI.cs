@@ -258,6 +258,13 @@ namespace FastbootEnhance
                     {
                         MainWindow.THIS.fastboot_ab_switch.Visibility = Visibility.Hidden;
                     }
+
+                    //检测是否应出现"去除更新状态"按钮
+                    if (fastbootData.snapshot_update_status == "none")
+                    {
+                        MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Hidden;
+                    }
+
                     MainWindow.THIS.fastboot_progress_bar.IsIndeterminate = false;
                     action_unlock();
                 });
@@ -514,6 +521,16 @@ namespace FastbootEnhance
                 {
                     MessageBox.Show(Properties.Resources.operation_not_supported);
                 }
+            };
+
+            //监听"去除更新状态"按钮
+            MainWindow.THIS.fastboot_cancel_update.Click += delegate
+            {
+                if (!checkCurDevExist())
+                    return;
+
+                new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
+                .Start(new StepCmdRunnerParam("snapshot-update cancel", 2, true));
             };
 
             MainWindow.THIS.fastboot_flash.Click += delegate
