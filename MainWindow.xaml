@@ -134,6 +134,7 @@
                                 <Button x:Name="fastboot_ab_switch" Margin="5,5,5,5" Content="切换分区" Grid.Column="1"/>
                                 <Button x:Name="fastboot_flash_payload" Margin="5,5,5,5" Content="{x:Static props:Resources.fastboot_flash_payload}" Grid.Column="2"/>
                                 <Button x:Name="fastboot_cancel_update" Margin="5,5,5,5" Content="去除更新状态" Grid.Column="3"/>
+                                <Button x:Name="fastboot_merge_update" Margin="5,5,5,5" Content="{x:Static props:Resources.fastboot_merge_update}" Grid.Column="3"/>
                                 
                             </Grid>
                             <Grid Grid.Row="1">

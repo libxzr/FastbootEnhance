@@ -295,6 +295,17 @@ namespace FastbootEnhance.Properties {
                 return ResourceManager.GetString("fastboot_is_userspace", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   查找类似 Finish in-progres update 的本地化字符串。
+        /// </summary>
+        public static string fastboot_merge_update
+        {
+            get
+            {
+                return ResourceManager.GetString("fastboot_merge_update", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   查找类似 This operation does not allow multiple partitions to be selected. 的本地化字符串。

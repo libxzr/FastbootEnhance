@@ -192,6 +192,9 @@
   <data name="fastboot_is_userspace" xml:space="preserve">
     <value>當前处于 Fastbootd</value>
   </data>
+  <data name="fastboot_merge_update" xml:space="preserve">
+    <value>完成當前更新</value>
+  </data>
   <data name="fastboot_not_support_multiselect" xml:space="preserve">
     <value>单分區操作不允許選擇多个分區</value>
   </data>
