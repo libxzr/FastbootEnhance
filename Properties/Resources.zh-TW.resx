@@ -297,6 +297,9 @@
   <data name="fastboot_update_status" xml:space="preserve">
     <value>系統更新狀態</value>
   </data>
+  <data name="fastboot_update_status_cancelled" xml:space="preserve">
+    <value>已取消</value>
+  </data>
   <data name="fastboot_update_status_merging" xml:space="preserve">
     <value>正在合併</value>
   </data>
@@ -305,6 +308,9 @@
   </data>
   <data name="fastboot_update_status_snapshotted" xml:space="preserve">
     <value>已快照</value>
+  </data>
+  <data name="fastboot_update_status_unknown" xml:space="preserve">
+    <value>未知</value>
   </data>
   <data name="fastboot_vab_staging_str0" xml:space="preserve">
     <value>系統更新正在進行中</value>
