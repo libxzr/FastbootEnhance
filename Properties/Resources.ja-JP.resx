@@ -141,6 +141,9 @@
   <data name="fastboot_basic_prop" xml:space="preserve">
     <value>プロパティ</value>
   </data>
+  <data name="fastboot_cancel_update" xml:space="preserve">
+    <value>更新を中断する</value>
+  </data>
   <data name="fastboot_choose_device" xml:space="preserve">
     <value>ダブルクリックで対象のデバイスを選択:</value>
   </data>
