@@ -77,7 +77,8 @@
                                     <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="2">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="5*"></RowDefinition>
-                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition Height="0.7*"></RowDefinition>
+                                            <RowDefinition Height="0.7*"></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <GroupBox x:Name="fastboot_single_part_op" Margin="10 0 10 0" Header="{x:Static props:Resources.fastboot_partition_action}">
                                             <Grid>
@@ -96,6 +97,7 @@
                                             </Grid>
                                         </GroupBox>
                                         <CheckBox x:Name="fastboot_show_logs" Content="{x:Static props:Resources.fastboot_show_logs}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <CheckBox x:Name="ignore_unknown_part" Content="{x:Static props:Resources.fastboot_ignore_unknown}" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,5,5,5"/>
                                     </Grid>
                                 </Grid>
                             </TabItem>
@@ -125,12 +127,14 @@
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+
                                 </Grid.ColumnDefinitions>
                                 <Button x:Name="fastboot_reboot_d" Margin="5,5,5,5" Content="Reboot to Bootloader" Grid.Column="0"/>
                                 <Button x:Name="fastboot_ab_switch" Margin="5,5,5,5" Content="切换分区" Grid.Column="1"/>
                                 <Button x:Name="fastboot_flash_payload" Margin="5,5,5,5" Content="{x:Static props:Resources.fastboot_flash_payload}" Grid.Column="2"/>
-                                <CheckBox x:Name="ignore_unknown_part" VerticalAlignment="Center" Content="{x:Static props:Resources.fastboot_ignore_unknown}" Margin="5,5,5,5" Grid.Column="3"/>
+                                <Button x:Name="fastboot_cancel_update" Margin="5,5,5,5" Content="{x:Static props:Resources.fastboot_cancel_update}" Grid.Column="3"/>
+                                
                             </Grid>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>

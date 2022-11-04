@@ -141,6 +141,9 @@
   <data name="fastboot_basic_prop" xml:space="preserve">
     <value>Basic Properties</value>
   </data>
+  <data name="fastboot_cancel_update" xml:space="preserve">
+    <value>Cancel pending update</value>
+  </data>
   <data name="fastboot_choose_device" xml:space="preserve">
     <value>Double click to choose the target device:</value>
   </data>
