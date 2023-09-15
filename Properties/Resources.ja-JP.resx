@@ -118,366 +118,366 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="about" xml:space="preserve">
-    <value>About</value>
+    <value>バージョン情報</value>
   </data>
   <data name="app_name" xml:space="preserve">
     <value>Fastboot Enhance</value>
   </data>
   <data name="author" xml:space="preserve">
-    <value>Author: LibXZR @ akr-developers.com</value>
+    <value>開発者: LibXZR @ akr-developers.com</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>無効</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>有効</value>
   </data>
   <data name="error" xml:space="preserve">
-    <value>Error</value>
+    <value>エラー</value>
   </data>
   <data name="fastboot_0_size" xml:space="preserve">
-    <value>Unknown</value>
+    <value>不明</value>
   </data>
   <data name="fastboot_basic_prop" xml:space="preserve">
-    <value>Basic Properties</value>
+    <value>プロパティ</value>
   </data>
   <data name="fastboot_cancel_update" xml:space="preserve">
-    <value>Cancel pending update</value>
+    <value>更新を中断する</value>
   </data>
   <data name="fastboot_choose_device" xml:space="preserve">
-    <value>Double click to choose the target device:</value>
+    <value>ダブルクリックで対象のデバイスを選択:</value>
   </data>
   <data name="fastboot_cow_exist_str0" xml:space="preserve">
-    <value>Virtual A/B snapshot partitions exist</value>
+    <value>仮想A/B一時パーティションが存在します</value>
   </data>
   <data name="fastboot_cow_exist_str1" xml:space="preserve">
-    <value>The snapshot partitions created during the Virtual A/B system update exist in the device, forcing it to continue may cause the flashing to fail due to insufficient space in the super partition, and thus brick the device.</value>
+    <value>仮想A/Bパーティションのアップデート時に作成された一時パーティションがデバイス内に存在する為、無理に続行をするとsuperパーティションの容量不足によりデバイスが文鎮化する可能性があります。</value>
   </data>
   <data name="fastboot_cow_exist_str2" xml:space="preserve">
-    <value>( You can manually delete the snapshot partitions ending in "cow" to resolve this warning if the Virtual A/B update is not in progress )</value>
+    <value>(仮想A/Bのアップデート中でなければ「COW」で終わる一時パーティションを手動で削除すればこの警告を解消することが可能です)</value>
   </data>
   <data name="fastboot_cow_exist_str3" xml:space="preserve">
-    <value>Would you like to continue?</value>
+    <value>続行をしますか?</value>
   </data>
   <data name="fastboot_create_dynamic_partition" xml:space="preserve">
-    <value>Create new logical partition</value>
+    <value>新しい論理パーティションの作成</value>
   </data>
   <data name="fastboot_current_device" xml:space="preserve">
-    <value>Current Device: </value>
+    <value>現在のデバイス: </value>
   </data>
   <data name="fastboot_current_slot" xml:space="preserve">
-    <value>Current Slot</value>
+    <value>現在のスロット</value>
   </data>
   <data name="fastboot_device" xml:space="preserve">
-    <value>Device</value>
+    <value>デバイス名</value>
   </data>
   <data name="fastboot_device_name" xml:space="preserve">
-    <value>Device Name</value>
+    <value>デバイス</value>
   </data>
   <data name="fastboot_device_not_exist" xml:space="preserve">
-    <value>Target device is not exist</value>
+    <value>対象デバイスがありません</value>
   </data>
   <data name="fastboot_enhance" xml:space="preserve">
-    <value>Fastboot Visualization</value>
+    <value>Fastboot</value>
   </data>
   <data name="fastboot_expand_dynamic_partition" xml:space="preserve">
-    <value>Expand logical partition</value>
+    <value>論理パーティションの拡張</value>
   </data>
   <data name="fastboot_filter_by_partition_name" xml:space="preserve">
-    <value>Filter by name:</value>
+    <value>名前で絞り込む:</value>
   </data>
   <data name="fastboot_flash_payload" xml:space="preserve">
-    <value>Flash Payload.bin</value>
+    <value>Payload.binを書き込む</value>
   </data>
   <data name="fastboot_ignore_unknown" xml:space="preserve">
-    <value>Ignore Unknown Partitions</value>
+    <value>不明なパーティションを無視</value>
   </data>
   <data name="fastboot_is_userspace" xml:space="preserve">
-    <value>In Fastbootd</value>
+    <value>Fastbootdで実行中</value>
   </data>
   <data name="fastboot_not_support_multiselect" xml:space="preserve">
-    <value>This operation does not allow multiple partitions to be selected.</value>
+    <value>この操作では複数のパーティションを選択することはできません。</value>
   </data>
   <data name="fastboot_only_logical" xml:space="preserve">
-    <value>This operation is only supported for logical partitions.</value>
+    <value>この操作は論理パーティションでのみ可能です。</value>
   </data>
   <data name="fastboot_partition_action" xml:space="preserve">
-    <value>Actions</value>
+    <value>アクション</value>
   </data>
   <data name="fastboot_partition_action_create" xml:space="preserve">
-    <value>Create</value>
+    <value>作成</value>
   </data>
   <data name="fastboot_partition_action_delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>削除</value>
   </data>
   <data name="fastboot_partition_action_erase" xml:space="preserve">
-    <value>Erase</value>
+    <value>消去</value>
   </data>
   <data name="fastboot_partition_action_flash" xml:space="preserve">
-    <value>Flash</value>
+    <value>書き込み</value>
   </data>
   <data name="fastboot_partition_action_resize" xml:space="preserve">
-    <value>Resize</value>
+    <value>リサイズ</value>
   </data>
   <data name="fastboot_partition_is_dynamic" xml:space="preserve">
-    <value>is Logical</value>
+    <value>論理パーティション</value>
   </data>
   <data name="fastboot_partition_name" xml:space="preserve">
-    <value>Name</value>
+    <value>名前</value>
   </data>
   <data name="fastboot_partition_name_empty" xml:space="preserve">
-    <value>Partition name is empty.</value>
+    <value>パーティション名が空欄です。</value>
   </data>
   <data name="fastboot_partition_size" xml:space="preserve">
-    <value>Size</value>
+    <value>サイズ</value>
   </data>
   <data name="fastboot_partition_size_b" xml:space="preserve">
-    <value>Size (B)</value>
+    <value>サイズ (B)</value>
   </data>
   <data name="fastboot_partition_size_empty" xml:space="preserve">
-    <value>Partition size is empty.</value>
+    <value>パーティションサイズが空欄です。</value>
   </data>
   <data name="fastboot_partition_size_invalid" xml:space="preserve">
-    <value>Invalid partition size.</value>
+    <value>パーティションサイズが無効です。</value>
   </data>
   <data name="fastboot_partition_size_unable_shrink" xml:space="preserve">
-    <value>Unable to shrink a partition. You can delete and recreate it.</value>
+    <value>パーティションの縮小ができません。パーティションの削除をしてから再作成であれば可能です。</value>
   </data>
   <data name="fastboot_partition_table" xml:space="preserve">
-    <value>Partitions</value>
+    <value>パーティション</value>
   </data>
   <data name="fastboot_prop_name" xml:space="preserve">
-    <value>Name</value>
+    <value>名前</value>
   </data>
   <data name="fastboot_prop_value" xml:space="preserve">
-    <value>Value</value>
+    <value>値</value>
   </data>
   <data name="fastboot_reboot_bootloader" xml:space="preserve">
-    <value>Reboot to BootLoader</value>
+    <value>Bootloaderで再起動</value>
   </data>
   <data name="fastboot_reboot_fastbootd" xml:space="preserve">
-    <value>Reboot to Fastbootd</value>
+    <value>Fastbootdで再起動</value>
   </data>
   <data name="fastboot_reboot_recovery" xml:space="preserve">
-    <value>Reboot to Recovery</value>
+    <value>Recoveryで再起動</value>
   </data>
   <data name="fastboot_reboot_system" xml:space="preserve">
-    <value>Reboot to System</value>
+    <value>Systemで再起動</value>
   </data>
   <data name="fastboot_remove_device" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>切断</value>
   </data>
   <data name="fastboot_seamless_update" xml:space="preserve">
-    <value>Seamless Update</value>
+    <value>シームレスアップデートに対応</value>
   </data>
   <data name="fastboot_secure_boot" xml:space="preserve">
-    <value>Secure Boot</value>
+    <value>セキュアブート</value>
   </data>
   <data name="fastboot_serial_num" xml:space="preserve">
-    <value>Serial Number</value>
+    <value>シリアルナンバー</value>
   </data>
   <data name="fastboot_setactive_a" xml:space="preserve">
-    <value>Activate Slot A</value>
+    <value>スロットAに変更</value>
   </data>
   <data name="fastboot_setactive_b" xml:space="preserve">
-    <value>Activate Slot B</value>
+    <value>スロットBに変更</value>
   </data>
   <data name="fastboot_show_logs" xml:space="preserve">
-    <value>Show logs</value>
+    <value>ログを表示</value>
   </data>
   <data name="fastboot_target_partition_not_selected" xml:space="preserve">
-    <value>Target partition not yet selected.</value>
+    <value>対象のパーティションが未選択です。</value>
   </data>
   <data name="fastboot_unknown_partition_str0" xml:space="preserve">
-    <value>The following partitions to flash may be unknown:</value>
+    <value>以下の書き込むパーティションが不明な場合があります:</value>
   </data>
   <data name="fastboot_unknown_partition_str1" xml:space="preserve">
-    <value>You can check the "Ignore unknown partitions" checkbox to disable this warning, the presence of unknown partitions does not mean that the flashing will fail or the device will brick.</value>
+    <value>不明なパーティションを無視にチェックを入れるとこの警告を無効にすることができます。未知のパーティションですがデバイスの書き込みに失敗したり、文鎮化する訳ではありません。</value>
   </data>
   <data name="fastboot_unknown_partition_str2" xml:space="preserve">
-    <value>You may need to reboot to fastbootd mode.</value>
+    <value>fastbootdモードの再起動が必要な可能性があります。</value>
   </data>
   <data name="fastboot_update_status" xml:space="preserve">
-    <value>System Update Status</value>
+    <value>システムアップデートの状態</value>
   </data>
   <data name="fastboot_update_status_merging" xml:space="preserve">
-    <value>Merging</value>
+    <value>マージ</value>
   </data>
   <data name="fastboot_update_status_none" xml:space="preserve">
-    <value>None</value>
+    <value>なし</value>
   </data>
   <data name="fastboot_update_status_snapshotted" xml:space="preserve">
-    <value>Snapshotted</value>
+    <value>スナップショット済み</value>
   </data>
   <data name="fastboot_vab_staging_str0" xml:space="preserve">
-    <value>System update is in progress</value>
+    <value>システムアップデート中</value>
   </data>
   <data name="fastboot_vab_staging_str1" xml:space="preserve">
-    <value>The device is in the process of system update, forcing the operation may brick the device.</value>
+    <value>デバイスのシステムアップデート中です。操作を強制するとデバイスが文鎮化する可能性があります。</value>
   </data>
   <data name="fastboot_vab_staging_str2" xml:space="preserve">
-    <value>( You can reboot the device to the system and wait a while until the update process is complete )</value>
+    <value>(デバイスのシステムアップデートが完了するまでしばらくお待ちください)</value>
   </data>
   <data name="fastboot_vab_staging_str3" xml:space="preserve">
-    <value>Would you like to continue?</value>
+    <value>続行をしますか?</value>
   </data>
   <data name="fastboot_vbmeta_disable_verify" xml:space="preserve">
-    <value>Would you like to disable the verification in vbmeta?</value>
+    <value>vbmetaのVerificationを無効化しますか?</value>
   </data>
   <data name="fastboot_vbmeta_disable_verify_title" xml:space="preserve">
-    <value>Disable verification</value>
+    <value>Verificationを無効化</value>
   </data>
   <data name="logger" xml:space="preserve">
-    <value>Logger</value>
+    <value>ログを記録</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>No</value>
+    <value>いいえ</value>
   </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="open_source" xml:space="preserve">
-    <value>Opensource</value>
+    <value>GitHub</value>
   </data>
   <data name="operation_completed" xml:space="preserve">
-    <value>Operation completed</value>
+    <value>操作が完了しました</value>
   </data>
   <data name="operation_not_supported" xml:space="preserve">
-    <value>Operation is not supported.</value>
+    <value>操作はサポートされていません。</value>
   </data>
   <data name="payload_basic_properties" xml:space="preserve">
-    <value>Basic Properties</value>
+    <value>プロパティ</value>
   </data>
   <data name="payload_blocksize" xml:space="preserve">
-    <value>Blocksize</value>
+    <value>ブロックサイズ</value>
   </data>
   <data name="payload_browse" xml:space="preserve">
-    <value>Browse</value>
+    <value>参照</value>
   </data>
   <data name="payload_current_file" xml:space="preserve">
-    <value>Current file: </value>
+    <value>現在のファイル: </value>
   </data>
   <data name="payload_data_size" xml:space="preserve">
-    <value>Data Blobs Size</value>
+    <value>Data Blobのサイズ</value>
   </data>
   <data name="payload_dumper" xml:space="preserve">
     <value>Payload Dumper</value>
   </data>
   <data name="payload_dynamic_partition_metadata" xml:space="preserve">
-    <value>Dynamic Partition Metadata</value>
+    <value>動的パーティションのメタデータ</value>
   </data>
   <data name="payload_error_occur" xml:space="preserve">
-    <value>An error has occurred.</value>
+    <value>エラーが発生しました。</value>
   </data>
   <data name="payload_extract_ignore_unknown" xml:space="preserve">
-    <value>Ignore unknown operations</value>
+    <value>不明な操作を無視</value>
   </data>
   <data name="payload_extract_ignore_verify" xml:space="preserve">
-    <value>Ignore checksum</value>
+    <value>チェックサムを無視</value>
   </data>
   <data name="payload_extract_image" xml:space="preserve">
-    <value>Extract Image</value>
+    <value>イメージを抽出する</value>
   </data>
   <data name="payload_extract_incremental" xml:space="preserve">
-    <value>Allow incremental</value>
+    <value>インクリメンタルを許可</value>
   </data>
   <data name="payload_extract_options" xml:space="preserve">
-    <value>Extracting options</value>
+    <value>抽出のオプション</value>
   </data>
   <data name="payload_full_package" xml:space="preserve">
-    <value>Full Package</value>
+    <value>フルパッケージ</value>
   </data>
   <data name="payload_incremental_warning" xml:space="preserve">
-    <value>Unable to extract images from an incremental package.</value>
+    <value>インクリメンタルパッケージからイメージを抽出できません。</value>
   </data>
   <data name="payload_manifest_size" xml:space="preserve">
-    <value>Manifest Size</value>
+    <value>マニフェストのサイズ</value>
   </data>
   <data name="payload_metadata_signature" xml:space="preserve">
-    <value>Metadata Signatures (Base64)</value>
+    <value>メタデータの署名 (Base64)</value>
   </data>
   <data name="payload_metadata_signature_size" xml:space="preserve">
-    <value>Metadata Signatures Size</value>
+    <value>メタデータの署名のサイズ</value>
   </data>
   <data name="payload_no_dynamic_metadata" xml:space="preserve">
-    <value>No dynamic partition metadata</value>
+    <value>動的パーティションのメタデータがありません</value>
   </data>
   <data name="payload_no_file_str" xml:space="preserve">
-    <value>No payload has been specified, click the button browse, or drag in a file.</value>
+    <value>Payloadを指定していない場合は、「参照」をクリックまたは「ファイルをドラッグ&amp;ドロップ」してください。</value>
   </data>
   <data name="payload_partitions" xml:space="preserve">
-    <value>Partitions</value>
+    <value>パーティション</value>
   </data>
   <data name="payload_partitions_filter_by_name" xml:space="preserve">
-    <value>Filter by name:</value>
+    <value>名前で絞り込む:</value>
   </data>
   <data name="payload_partitions_hash" xml:space="preserve">
-    <value>Checksum (Base64)</value>
+    <value>チェックサム (Base64)</value>
   </data>
   <data name="payload_partitions_name" xml:space="preserve">
-    <value>Name</value>
+    <value>名前</value>
   </data>
   <data name="payload_partitions_size" xml:space="preserve">
-    <value>Size</value>
+    <value>サイズ</value>
   </data>
   <data name="payload_partition_group_include" xml:space="preserve">
-    <value>Partitions Included: </value>
+    <value>Payloadに含まれるパーティション: </value>
   </data>
   <data name="payload_partition_group_name" xml:space="preserve">
-    <value>Partition Group Name: </value>
+    <value>パーティションのグループ名: </value>
   </data>
   <data name="payload_partition_group_size" xml:space="preserve">
-    <value>Partition Group Size: </value>
+    <value>パーティションのグループサイズ: </value>
   </data>
   <data name="payload_property_name" xml:space="preserve">
-    <value>Name</value>
+    <value>名前</value>
   </data>
   <data name="payload_property_value" xml:space="preserve">
-    <value>Value</value>
+    <value>値</value>
   </data>
   <data name="payload_remove_file" xml:space="preserve">
-    <value>Remove</value>
+    <value>削除</value>
   </data>
   <data name="payload_signature" xml:space="preserve">
-    <value>Signatures (Base64)</value>
+    <value>署名 (Base64)</value>
   </data>
   <data name="payload_signature_size" xml:space="preserve">
-    <value>Signatures Size</value>
+    <value>署名のサイズ</value>
   </data>
   <data name="payload_snapshot_enabled" xml:space="preserve">
-    <value>Snapshot enabled: </value>
+    <value>スナップショットが有効: </value>
   </data>
   <data name="payload_target_partition_not_selected" xml:space="preserve">
-    <value>Target partitions to extract not yet selected.</value>
+    <value>抽出する対象パーティションが未選択です。</value>
   </data>
   <data name="payload_timestamp" xml:space="preserve">
-    <value>Timestamp</value>
+    <value>タイムスタンプ</value>
   </data>
   <data name="payload_unable_drop_multifile" xml:space="preserve">
-    <value>Unable to drop multiple files.</value>
+    <value>複数ファイルのドロップはできません。</value>
   </data>
   <data name="payload_unsupported_format" xml:space="preserve">
-    <value>Incompatible file format.</value>
+    <value>ファイル形式の互換性がありません。</value>
   </data>
   <data name="payload_version" xml:space="preserve">
-    <value>Payload Version</value>
+    <value>Payloadのバージョン</value>
   </data>
   <data name="program_already_running" xml:space="preserve">
-    <value>The program is already running</value>
+    <value>プログラムは既に実行中です。</value>
   </data>
   <data name="release_at" xml:space="preserve">
-    <value>Release at www.akr-developers.com</value>
+    <value>リリース先: www.akr-developers.com</value>
   </data>
   <data name="select_save_path" xml:space="preserve">
-    <value>Select the path to save</value>
+    <value>保存するパスを選択</value>
   </data>
   <data name="unknown" xml:space="preserve">
-    <value>Unknown</value>
+    <value>不明</value>
   </data>
   <data name="visit_thread" xml:space="preserve">
-    <value>Thread</value>
+    <value>スレッド</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>Yes</value>
+    <value>はい</value>
   </data>
 </root>

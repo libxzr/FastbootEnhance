@@ -139,7 +139,7 @@
     <value>基本属性</value>
   </data>
   <data name="fastboot_cancel_update" xml:space="preserve">
-    <value>去除更新状态</value>
+    <value>清除更新状态</value>
   </data>
   <data name="fastboot_choose_device" xml:space="preserve">
     <value>选择操作的目标设备（双击）：</value>

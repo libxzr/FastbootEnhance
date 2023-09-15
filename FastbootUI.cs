@@ -260,20 +260,19 @@ namespace FastbootEnhance
                     }
 
                     //检测是否应出现"去除更新状态"按钮
-                    if (vab_status_str == Properties.Resources.fastboot_update_status_snapshotted)
+                    if (fastbootData.snapshot_update_status == "snapshotted")
                     {
                         MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Visible;
-                        MainWindow.THIS.fastboot_cancel_update.Content = Properties.Resources.fastboot_cancel_update;
                     }
-                    else if (vab_status_str == Properties.Resources.fastboot_update_status_merging)
+                    else if (fastbootData.snapshot_update_status == "merging")
                     {
                         MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Visible;
-                        MainWindow.THIS.fastboot_cancel_update.Content = Properties.Resources.fastboot_cancel_update;
                     }
                     else 
                     {
                         MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Hidden;
                     }
+
                     MainWindow.THIS.fastboot_progress_bar.IsIndeterminate = false;
                     action_unlock();
                 });
