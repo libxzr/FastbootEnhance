@@ -131,7 +131,7 @@ namespace FastbootEnhance.Properties {
                 return ResourceManager.GetString("fastboot_basic_prop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   查找类似 Cancel pending update 的本地化字符串。
         /// </summary>
@@ -140,7 +140,7 @@ namespace FastbootEnhance.Properties {
                 return ResourceManager.GetString("fastboot_cancel_update", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   查找类似 Double click to choose the target device: 的本地化字符串。
         /// </summary>
@@ -291,6 +291,15 @@ namespace FastbootEnhance.Properties {
         public static string fastboot_is_userspace {
             get {
                 return ResourceManager.GetString("fastboot_is_userspace", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查找类似 Finish pending update 的本地化字符串。
+        /// </summary>
+        public static string fastboot_merge_update {
+            get {
+                return ResourceManager.GetString("fastboot_merge_update", resourceCulture);
             }
         }
         

@@ -148,13 +148,13 @@
     <value>Double click to choose the target device:</value>
   </data>
   <data name="fastboot_cow_exist_str0" xml:space="preserve">
-    <value>Virtual A/B temporary partitions exist</value>
+    <value>Virtual A/B snapshot partitions exist</value>
   </data>
   <data name="fastboot_cow_exist_str1" xml:space="preserve">
-    <value>The temporary partitions created during the Virtual A/B system update exist in the device, forcing it to continue may cause the flashing to fail due to insufficient space in the super partition, and thus brick the device.</value>
+    <value>The snapshot partitions created during the Virtual A/B system update exist in the device, forcing it to continue may cause the flashing to fail due to insufficient space in the super partition, and thus brick the device.</value>
   </data>
   <data name="fastboot_cow_exist_str2" xml:space="preserve">
-    <value>( You can manually delete the temporary partitions ending in "cow" to resolve this warning if the Virtual A/B update is not in progress )</value>
+    <value>( You can manually delete the snapshot partitions ending in "cow" to resolve this warning if the Virtual A/B update is not in progress )</value>
   </data>
   <data name="fastboot_cow_exist_str3" xml:space="preserve">
     <value>Would you like to continue?</value>
@@ -194,6 +194,9 @@
   </data>
   <data name="fastboot_is_userspace" xml:space="preserve">
     <value>In Fastbootd</value>
+  </data>
+  <data name="fastboot_merge_update" xml:space="preserve">
+    <value>Finish pending update</value>
   </data>
   <data name="fastboot_not_support_multiselect" xml:space="preserve">
     <value>This operation does not allow multiple partitions to be selected.</value>
