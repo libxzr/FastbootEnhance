@@ -195,6 +195,9 @@
   <data name="fastboot_is_userspace" xml:space="preserve">
     <value>In Fastbootd</value>
   </data>
+  <data name="fastboot_merge_update" xml:space="preserve">
+    <value>Finish pending update</value>
+  </data>
   <data name="fastboot_not_support_multiselect" xml:space="preserve">
     <value>This operation does not allow multiple partitions to be selected.</value>
   </data>

@@ -259,18 +259,34 @@ namespace FastbootEnhance
                         MainWindow.THIS.fastboot_ab_switch.Visibility = Visibility.Hidden;
                     }
 
+                    //检测是否应出现"Flash Payload.bin"按钮
+                    if (fastbootData.snapshot_update_status == "none")
+                    {
+                        MainWindow.THIS.fastboot_flash_payload.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        MainWindow.THIS.fastboot_flash_payload.Visibility = Visibility.Hidden;
+                    }
+
                     //检测是否应出现"去除更新状态"按钮
                     if (fastbootData.snapshot_update_status == "snapshotted")
                     {
                         MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Visible;
                     }
-                    else if (fastbootData.snapshot_update_status == "merging")
-                    {
-                        MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Visible;
-                    }
-                    else 
+                    else
                     {
                         MainWindow.THIS.fastboot_cancel_update.Visibility = Visibility.Hidden;
+                    }
+
+                    //检测是否应出现"完成更新"按钮
+                    if (fastbootData.snapshot_update_status == "merging")
+                    {
+                        MainWindow.THIS.fastboot_merge_update.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        MainWindow.THIS.fastboot_merge_update.Visibility = Visibility.Hidden;
                     }
 
                     MainWindow.THIS.fastboot_progress_bar.IsIndeterminate = false;
@@ -538,7 +554,19 @@ namespace FastbootEnhance
                     return;
 
                 new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
-                .Start(new StepCmdRunnerParam("snapshot-update cancel", 2, false));
+                .Start(new StepCmdRunnerParam("snapshot-update cancel", 2, false, true));
+                new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
+                .Start(new StepCmdRunnerParam("set_active other", 2, false));
+            };
+
+            //监听"完成更新"按钮
+            MainWindow.THIS.fastboot_merge_update.Click += delegate
+            {
+                if (!checkCurDevExist())
+                    return;
+
+                new Thread(new ParameterizedThreadStart(step_cmd_runner_err))
+                .Start(new StepCmdRunnerParam("snapshot-update merge", 2, false));
             };
 
             MainWindow.THIS.fastboot_flash.Click += delegate
